@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import Arrow from "../assets/svg/arrow.svg";
+import External from "../assets/svg/external.svg";
+
+const { data, id } = Astro.props;
+const isExternal = data.behanceUrl;
+const href = isExternal ? data.behanceUrl : `${id}`;
+---
+
+<li class="flex flex-col gap-y-3 bg-grey rounded-2xl px-4 pt-4">
+  <a
+    href={href}
+    target={isExternal ? "_blank" : "__self"}
+    class="flex justify-between gap-x-4"
+  >
+    <h3 class="heading-s">{data.title}</h3>
+    {
+      isExternal ? (
+        <div aria-hidden="true" class="flex items-center gap-3">
+          <span class="hidden">Beahance</span>
+          <External
+            width="33px"
+            stroke="currentColor"
+            class="aspect-square shrink-0"
+          />
+        </div>
+      ) : (
+        <Arrow
+          width="40px"
+          aria-hidden="true"
+          stroke="currentColor"
+          class="aspect-3/1 shrink-0"
+        />
+      )
+    }
+  </a>
+  <ul class="flex flex-wrap gap-1.5">
+    {
+      data.tags.map((tag) => (
+        <li class="text-light p-2.5 rounded-md border border-solid border-inherit leading-none">
+          {tag}
+        </li>
+      ))
+    }
+  </ul>
+  <Image
+    class="w-full mx-auto aspect-2/1 object-top"
+    src={data.cover}
+    alt={data.coverAlt}
+    width={data.cover.width / 2}
+    densities={[1.5, 2]}
+    decoding="async"
+    loading="lazy"
+  />
+</li>

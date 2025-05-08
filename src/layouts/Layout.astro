@@ -1,22 +1,108 @@
+---
+const { title } = Astro.props;
+
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Apavlyk Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="view-transition" content="same-origin" />
+  </head>
+  <body>
+    <header
+      id="header"
+      class="wrapper flex justify-between items-center gap-4 font-semibold sticky top-0 bg-secondary z-6"
+    >
+      <a href="/" class="text-sm" aria-label="Home Page"
+        ><span aria-hidden="true">Anastasiya Pavlyk</span></a
+      >
+      <nav id="mobile-menu" class="hidden" aria-label="Primary">
+        <ul class="flex space-x-4">
+          <li><a href="/" class="hover:text-blue-600">Work</a></li>
+          <li><a href="/#about" class="hover:text-blue-600">About</a></li>
+          <li>
+            <a href="/#articles" class="hover:text-blue-600">Talks&Articles</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="https://www.linkedin.com/in/anastasiya-pavlyk/" target="_blank"
+      ></a>
+      <button
+        id="header-btn"
+        aria-label="Toggle menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg
+          width="45"
+          height="45"
+          viewBox="0 0 45 45"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 17.7971C15 17 23.1497 14.0369 35 17.7971"
+            class="stroke-current"
+            stroke-linecap="round"></path>
+          <path
+            d="M11 24.229C14.0624 22.1377 23.1497 20.5826 35 23.0921"
+            class="stroke-current"
+            stroke-linecap="round"></path>
+          <path
+            d="M11 29.4248C16.5 28.4248 25 27.4248 35 29.2219"
+            class="stroke-current"
+            stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </header>
+    <main id="main" class="wrapper pt-12">
+      <slot />
+    </main>
+    <footer
+      id="footer"
+      class="wrapper grid grid-cols-2 sm:grid-cols-3 items-center gap-4 text-sm"
+    >
+      <a
+        href="#main"
+        class="order-3 justify-self-end sm:justify-self-center font-semibold"
+        ><svg
+          class="inline aspect-[5/4] me-[.66em]"
+          style="height: min(1.2em, 24px)"
+          aria-hidden="true"
+          viewBox="0 0 32 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M27.4491 25C27.1523 4.3577 1 6.59398 1 14.5651C1 25 27.4491 17.2513 27.4491 1M27.4491 1L23.5313 4.3577M27.4491 1L31 3.68623"
+            class="stroke-current stroke-2"
+            stroke-linecap="round"></path>
+        </svg>Go up</a
+      >
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 38 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="col-span-2 sm:col-span-1 justify-self-end sm:order-last aspect-[6/5]"
+        style="width: min(10svw, 56px)"
+      >
+        <path
+          d="M3.7728 2.66708C13.3481 -1.4078 19.1095 12.7022 19.6998 12.763C20.2901 12.8239 28.0103 -1.89431 35.4311 1.51156C42.852 4.91742 21.6441 32.2561 19.6998 30.955C11.8734 25.7182 -5.80251 6.74196 3.7728 2.66708Z"
+          class="stroke-current"
+          stroke-linecap="round"></path>
+      </svg>
+      <p class="sm:order-first">
+        Developed by <a href="https://weblateweb.dev/" target="_blank"
+          >weblate</a
+        >
+      </p>
+    </footer>
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

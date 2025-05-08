@@ -1,11 +1,189 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Certificate from "../components/Certificate.astro";
+import Work from "../components/Work.astro";
+import certificates from "../content/certificates.json";
+import ArticleIcon from "../assets/svg/article-icon.svg";
+import MentorIcon from "../assets/svg/mentor-icon.svg";
+import ProcessIcon from "../assets/svg/process-icon.svg";
+import Portrait from "../assets/svg/portrait.svg";
+import Blob from "../assets/svg/blob.svg";
+import Crown from "../assets/svg/crown.svg";
+import Rhomb from "../assets/svg/rhomb.svg";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const works = await getCollection("works");
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Home">
+  <section>
+    <h1
+      class="text-[9.6svw] font-bold mb-4 flex flex-wrap gap-x-2 relative"
+      style="view-transition-name: hero-title;"
+    >
+      <span class="ms-[31svw]"
+        >UX&UI
+        <Rhomb
+          aria-hidden="true"
+          width="54px"
+          stroke="currentColor"
+          class="aspect-[7/8] absolute hidden"
+        />
+      </span>
+      <span class="ms-auto relative"
+        >designer
+        <Crown
+          aria-hidden="true"
+          width="39px"
+          stroke="currentColor"
+          class="aspect-square absolute top-0 right-0 -translate-y-3/4"
+        />
+      </span>
+      <span class="ms-[48svw]">for</span>
+      <span class="ms-auto">inclusive</span>
+      <span class="">tech</span>
+      <span class="ms-auto relative"
+        >solutions
+        <Rhomb
+          aria-hidden="true"
+          width="30px"
+          stroke="currentColor"
+          class="aspect-[7/8] absolute top-0 left-0 -translate-x-3/2"
+        />
+      </span>
+
+      <div aria-hidden="true" class="absolute w-full -z-1">
+        <Blob
+          width="72svw"
+          style="fill: var(--color-accent);"
+          class="aspect-[7/8] absolute -top-8 -left-6"
+        />
+        <Portrait
+          width="36svw"
+          stroke="currentColor"
+          class="aspect-[7/8] absolute top-2"
+        />
+      </div>
+    </h1>
+
+    <p class="mb-4 relative z-1">
+      I'm an interface designer with 4 years of experience, specializing in
+      creating user-friendly financial interfaces for web and mobile.
+      <Crown
+        aria-hidden="true"
+        width="56px"
+        stroke="currentColor"
+        class="aspect-square absolute hidden"
+      />
+    </p>
+    <p class="relative z-1">
+      I'm passionate about making technology accessible to everyone and I enjoy
+      helping design teams grow by mentoring junior designers and sharing my
+      knowledge.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="heading-m">Work</h2>
+    <ul class="flex flex-col gap-y-7.5">
+      {works.map((work) => <Work data={work.data} id={work.id} />)}
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="heading-m">About</h2>
+    <div class="grid gap-y-7.5">
+      <p>
+        I am a designer who puts <span
+          id="text-underline"
+          class="relative inline-block"
+        >
+          people&nbsp;first&nbsp;</span
+        >— whether they are end-users or team members. My approach combines
+        empathy with an iterative design process to create thoughtful and
+        enjoyable user experiences. Collaborating closely with business
+        analysts, developers, and QA teams, I foster a creative environment that
+        leverages diverse insights. This teamwork results in innovative
+        solutions that align with both user needs and business objectives.
+      </p>
+      <article class="relative bg-accent px-4 pt-3 pb-5 rounded-xl">
+        <h3 class="heading-s mb-10">Design process</h3>
+        <p>
+          I use the Double Diamond framework to ensure my design process is both
+          user-centered and solution-oriented. This approach divides the design
+          journey into four distinct phases: Discover, Define, Develop, and
+          Deliver.
+        </p>
+
+        <ProcessIcon
+          aria-hidden="true"
+          width="20%"
+          stroke="currentColor"
+          class="aspect-video absolute top-8 right-13"
+        />
+      </article>
+
+      <article class="relative bg-accent px-4 pt-3 pb-5 rounded-xl">
+        <h3 class="heading-s mb-10">How I mentor</h3>
+        <p>
+          I focus on giving clear, practical advice to help my mentees succeed.
+          I believe kindness is key to building trust and strong relationships.
+          My goal is to support and empower my mentees, always putting their
+          growth and well-being first.
+        </p>
+        <MentorIcon
+          aria-hidden="true"
+          width="10%"
+          stroke="currentColor"
+          class="aspect-square absolute bottom-4 right-4"
+        />
+      </article>
+      <section>
+        <h3 class="heading-s mb-5">Certifications</h3>
+
+        <ul class="flex flex-col gap-y-5">
+          {
+            certificates.map((certificate) => (
+              <Certificate data={certificate} />
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="heading-m">Talks&Articles</h2>
+    <ul class="grid gap-y-7.5">
+      <li
+        class="flex items-end aspect-video relative bg-grey rounded-xl px-4 pb-7"
+      >
+        <a
+          href="https://www.linkedin.com/pulse/future-accessibility-devexperts-anastasiya-pavlyk-dx1zf/"
+          target="_blank"
+          class="text-xl"
+          >The Future of Accessibility at&nbsp;Devexperts
+        </a>
+        <ArticleIcon
+          aria-hidden="true"
+          width="10%"
+          stroke="currentColor"
+          stroke-width="2"
+          class="aspect-square absolute top-7.5 right-12"
+        />
+      </li>
+      <li class="aspect-video overflow-hidden rounded-xl w-full">
+        <iframe
+          width="100%"
+          height="100%"
+          loading="lazy"
+          src="https://www.youtube-nocookie.com/embed/uyA54-uiUHc?si=mDuFcIrUk8G-U9m8"
+          title="Design for Accessibility. YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </li>
+    </ul>
+  </section>
 </Layout>
