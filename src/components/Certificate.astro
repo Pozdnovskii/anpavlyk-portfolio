@@ -9,8 +9,10 @@ const Icon =
   data.organization === "Interaction Design Foundation" ? IdfIcon : DequeIcon;
 ---
 
-<li class="grid grid-cols-[max-content_minmax(0,_1fr)] gap-x-2">
-  <h4 class="heading-s">{data.course}</h4>
+<li
+  class="grid grid-cols-[max-content_minmax(0,_1fr)] gap-x-3 md:gap-x-4 lg:gap-x-5"
+>
+  <h4 class="heading-s self-end">{data.course}</h4>
   <span>{data.organization} '{data.year}</span>
   <Image
     src={Icon}

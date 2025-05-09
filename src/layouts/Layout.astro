@@ -14,12 +14,12 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="view-transition" content="same-origin" />
   </head>
-  <body>
+  <body class="md:text-lg lg:text-xl xl:text-2xl">
     <header
       id="header"
       class="wrapper flex justify-between items-center gap-4 font-semibold sticky top-0 bg-secondary z-6"
     >
-      <a href="/" class="text-sm" aria-label="Home Page"
+      <a href="/" class="text-em-sm" aria-label="Home Page"
         ><span aria-hidden="true">Anastasiya Pavlyk</span></a
       >
       <nav id="mobile-menu" class="hidden" aria-label="Primary">
@@ -61,12 +61,12 @@ import "../styles/global.css";
         </svg>
       </button>
     </header>
-    <main id="main" class="wrapper pt-12">
+    <main id="main" class="wrapper pt-16">
       <slot />
     </main>
     <footer
       id="footer"
-      class="wrapper grid grid-cols-2 sm:grid-cols-3 items-center gap-4 text-sm"
+      class="wrapper grid grid-cols-2 sm:grid-cols-3 items-center gap-4 text-em-sm pb-4"
     >
       <a
         href="#main"

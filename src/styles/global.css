@@ -34,6 +34,7 @@
   --color-grey: var(--color-zinc-200);
   --color-accent: var(--color-lime-200);
   --spacing-svw: 5.4svw;
+  --text-em-sm: 0.875em;
 }
 
 @layer base {
@@ -71,7 +72,7 @@
   }
 
   #main {
-    @apply flex flex-col gap-16;
+    @apply flex flex-col gap-y-16 md:gap-y-20 lg:gap-y-28 xl:gap-y-32;
     margin-bottom: min(20svh, 150px);
   }
 
@@ -94,14 +95,20 @@
   } */
 
   .heading-m {
-    @apply text-xl mb-5;
+    @apply text-[1.33em] md:text-[1.75em];
+    margin-bottom: min(1em, 40px);
   }
 
   .heading-s {
-    @apply text-base/tight;
+    font-size: 1em;
+    line-height: 1.25;
   }
 
   .wrapper {
-    @apply w-full 2xl:container px-svw 2xl:px-[84px];
+    @apply w-full px-svw 2xl:container 2xl:px-[84px];
+  }
+
+  .card {
+    padding: clamp(12px, 3.3svw, 36px) clamp(16px, 4.2svw, 40px);
   }
 }

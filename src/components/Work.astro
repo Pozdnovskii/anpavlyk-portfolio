@@ -8,17 +8,19 @@ const isExternal = data.behanceUrl;
 const href = isExternal ? data.behanceUrl : `${id}`;
 ---
 
-<li class="flex flex-col gap-y-3 bg-grey rounded-2xl px-4 pt-4">
+<li
+  class="flex flex-col gap-y-3 bg-grey rounded-2xl card pb-0 md:gap-y-4 lg:gap-y-5"
+>
   <a
     href={href}
     target={isExternal ? "_blank" : "__self"}
-    class="flex justify-between gap-x-4"
+    class="flex justify-between gap-x-4 items-center"
   >
     <h3 class="heading-s">{data.title}</h3>
     {
       isExternal ? (
         <div aria-hidden="true" class="flex items-center gap-3">
-          <span class="hidden">Beahance</span>
+          <span class="hidden md:block">Beahance</span>
           <External
             width="33px"
             stroke="currentColor"
@@ -35,21 +37,21 @@ const href = isExternal ? data.behanceUrl : `${id}`;
       )
     }
   </a>
-  <ul class="flex flex-wrap gap-1.5">
+  <ul class="flex flex-wrap gap-1.5 mb-4 lg:gap-2.5 lg:mb-6">
     {
       data.tags.map((tag) => (
-        <li class="text-light p-2.5 rounded-md border border-solid border-inherit leading-none">
+        <li class="text-em-sm text-light p-[0.5em] rounded-md border border-solid border-inherit leading-none">
           {tag}
         </li>
       ))
     }
   </ul>
   <Image
-    class="w-full mx-auto aspect-2/1 object-top"
+    class="w-full mx-auto aspect-2/1 object-top sm:w-4/5"
     src={data.cover}
     alt={data.coverAlt}
-    width={data.cover.width / 2}
-    densities={[1.5, 2]}
+    widths={[300, 380, 540, 720, 900, data.cover.width]}
+    sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 540px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${data.cover.width}px`}
     decoding="async"
     loading="lazy"
   />
