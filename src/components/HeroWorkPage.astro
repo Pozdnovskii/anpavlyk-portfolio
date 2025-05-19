@@ -1,0 +1,62 @@
+---
+const {
+  title,
+  description,
+  secondDescription,
+  client,
+  role,
+  duration,
+  goal,
+  outcome,
+} = Astro.props;
+---
+
+<div>
+  <header class="mb-[2em] w-[min(54ch,_100%)]">
+    <h1 class="heading-l">{title}</h1>
+    <p class="font-bold">{description}</p>
+    {
+      secondDescription && (
+        <p class="font-bold mt-[0.5em]">{secondDescription}</p>
+      )
+    }
+  </header>
+
+  <section id="intro" class="grid gap-y-[2.5em] md:grid-rows-[min-content_1fr]">
+    <h2 class="sr-only">Intro</h2>
+    <div
+      class="grid grid-cols-[repeat(auto-fit,_minmax(9em,_1fr))] gap-4 md:grid-cols-1 md:row-span-full"
+    >
+      {
+        client && (
+          <div>
+            <h3 class="text-em-sm">Client</h3>
+            <span>{client}</span>
+          </div>
+        )
+      }
+      <div>
+        <h3 class="text-em-sm">Role</h3>
+        <span>{role}</span>
+      </div>
+      <div class="col-span-full">
+        <h3 class="text-em-sm">Duration</h3>
+        <span>{duration}</span>
+      </div>
+      <p class="text-em-sm text-light col-span-full">
+        Due to confidentiality agreements, only certain aspects of the redesign
+        work can be shared, without revealing specific details about the
+        project.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="heading-s mb-[.75em]">Goal</h3>
+      <span>{goal} </span>
+    </div>
+    <div>
+      <h3 class="heading-s mb-[.75em]">Outcome</h3>
+      <span>{outcome}</span>
+    </div>
+  </section>
+</div>

@@ -2,6 +2,9 @@
 const { title } = Astro.props;
 
 import "../styles/global.css";
+import Linkedin from "../assets/images/svg/linkedin.svg";
+
+const isHomePage = Astro.url.pathname === "/";
 ---
 
 <!doctype html>
@@ -17,27 +20,49 @@ import "../styles/global.css";
   <body class="md:text-lg lg:text-xl xl:text-2xl">
     <header
       id="header"
-      class="wrapper flex justify-between items-center gap-4 font-semibold sticky top-0 bg-secondary z-6"
+      class="wrapper text-em-sm flex justify-between items-center gap-4 font-semibold sticky top-0 bg-secondary z-6 py-3"
     >
-      <a href="/" class="text-em-sm" aria-label="Home Page"
+      <a href="/" aria-label="Home Page"
         ><span aria-hidden="true">Anastasiya Pavlyk</span></a
       >
-      <nav id="mobile-menu" class="hidden" aria-label="Primary">
-        <ul class="flex space-x-4">
-          <li><a href="/" class="hover:text-blue-600">Work</a></li>
-          <li><a href="/#about" class="hover:text-blue-600">About</a></li>
+      <nav
+        id="mobile-menu"
+        class="absolute top-0 right-0 bg-white hidden flex flex-col gap-[1em] p-8 opacity-0 translate-x-full data-[open=true]:opacity-100 data-[open=true]:translate-x-0 transition-opacity duration-1700 delay-500 lg:static lg:contents"
+        aria-label="Primary"
+        data-open="false"
+      >
+        <ul
+          class="flex flex-col gap-[1em] leading-none *:flex [&_a]:px-[1em] [&_a]:py-[.66em] [&_a]:rounded-full [&_a]:hover:bg-accent [&_a]:transition-colors lg:flex-row"
+        >
           <li>
-            <a href="/#articles" class="hover:text-blue-600">Talks&Articles</a>
+            <a href={isHomePage ? "#work" : "/"}>
+              {isHomePage ? "Work" : "Home"}</a
+            >
+          </li>
+          <li><a href="/#about">About</a></li>
+          <li>
+            <a href="/#articles">Talks&Articles</a>
           </li>
         </ul>
+        <a
+          href="https://www.linkedin.com/in/anastasiya-pavlyk/"
+          target="_blank"
+          class="flex flex-row-reverse items-center gap-x-2.5 ps-[1em] lg:ps-0"
+        >
+          <span>Let's connect</span>
+          <Linkedin
+            aria-label="LinkedIn Profile"
+            fill="currentColor"
+            class="w-7 max-w-[45px] aspect-square"
+          />
+        </a>
       </nav>
-      <a href="https://www.linkedin.com/in/anastasiya-pavlyk/" target="_blank"
-      ></a>
       <button
         id="header-btn"
         aria-label="Toggle menu"
         aria-controls="mobile-menu"
         aria-expanded="false"
+        class="cursor-pointer lg:hidden"
       >
         <svg
           width="45"
@@ -106,3 +131,21 @@ import "../styles/global.css";
     </footer>
   </body>
 </html>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("header-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    if (toggleButton && menu) {
+      const toggleMenu = () => {
+        const isHidden = menu.classList.toggle("hidden");
+        toggleButton.setAttribute("aria-expanded", String(!isHidden));
+        menu.setAttribute("data-open", String(!isHidden));
+      };
+
+      toggleButton.removeEventListener("click", toggleMenu);
+      toggleButton.addEventListener("click", toggleMenu);
+    }
+  });
+</script>

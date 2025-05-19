@@ -34,10 +34,18 @@
   --color-grey: var(--color-zinc-200);
   --color-accent: var(--color-lime-200);
   --spacing-svw: 5.4svw;
+  --spacing-section: min(10svh, 150px);
+  --spacing-section-sm: calc(var(--spacing-section) / 2);
+  --spacing-section-xs: calc(var(--spacing-section) / 3);
   --text-em-sm: 0.875em;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--spacing-section);
+  }
+
   body {
     font-family: var(--font-primary);
     font-weight: 400;
@@ -61,19 +69,18 @@
     text-wrap: pretty;
   }
 
-  h1,
-  .heading-m,
-  .heading-l {
+  h1 {
     font-family: var(--font-secondary);
   }
 
   img {
     object-fit: cover;
   }
+}
 
+@layer components {
   #main {
-    @apply flex flex-col gap-y-16 md:gap-y-20 lg:gap-y-28 xl:gap-y-32;
-    margin-bottom: min(20svh, 150px);
+    @apply flex flex-col gap-y-section mb-section;
   }
 
   #header-btn {
@@ -90,9 +97,14 @@
     right: 0;
   }
 
-  /* .heading-l {
-    @apply text-xl 
-  } */
+  .heading-m,
+  .heading-l {
+    font-family: var(--font-secondary);
+  }
+
+  .heading-l {
+    @apply text-4xl md:text-[2.55em] mb-[0.875em];
+  }
 
   .heading-m {
     @apply text-[1.33em] md:text-[1.75em];
@@ -110,5 +122,13 @@
 
   .card {
     padding: clamp(12px, 3.3svw, 36px) clamp(16px, 4.2svw, 40px);
+  }
+
+  .card.card_big-grey {
+    @apply flex flex-col bg-grey rounded-2xl;
+  }
+
+  .white-image {
+    @apply border border-grey shadow-xl shadow-grey/20;
   }
 }

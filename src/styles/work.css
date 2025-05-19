@@ -1,0 +1,60 @@
+figure {
+  margin-top: var(--spacing-section-xs);
+}
+
+figcaption {
+  line-height: 1.2;
+}
+
+figure img {
+  border-radius: 12px;
+}
+
+#tutorials figure img:first-of-type {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#tutorials figure img:last-of-type {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.list {
+  padding-inline-start: 2ch;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+.work__section > section:not(:last-of-type) {
+  margin-bottom: var(--spacing-section);
+}
+
+.work-section__step > section:not(:last-of-type) {
+  margin-bottom: var(--spacing-section-sm);
+}
+
+@media (width >= 48rem) {
+  #intro,
+  #discover-figure,
+  .two-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.25fr);
+    column-gap: var(--spacing-section-sm);
+  }
+
+  .two-cols section {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  .two-cols :is(h2, h3, h4, p, ul, ol) {
+    grid-column: 2;
+  }
+
+  .two-cols figure {
+    grid-column: span 2;
+  }
+}

@@ -4,13 +4,13 @@ import Layout from "../layouts/Layout.astro";
 import Certificate from "../components/Certificate.astro";
 import Work from "../components/Work.astro";
 import certificates from "../content/certificates.json";
-import ArticleIcon from "../assets/svg/article-icon.svg";
-import MentorIcon from "../assets/svg/mentor-icon.svg";
-import ProcessIcon from "../assets/svg/process-icon.svg";
-import Portrait from "../assets/svg/portrait.svg";
-import Blob from "../assets/svg/blob.svg";
-import Crown from "../assets/svg/crown.svg";
-import Rhomb from "../assets/svg/rhomb.svg";
+import ArticleIcon from "../assets/images/svg/article-icon.svg";
+import MentorIcon from "../assets/images/svg/mentor-icon.svg";
+import ProcessIcon from "../assets/images/svg/process-icon.svg";
+import Portrait from "../assets/images/svg/portrait.svg";
+import Blob from "../assets/images/svg/blob.svg";
+import Crown from "../assets/images/svg/crown.svg";
+import Rhomb from "../assets/images/svg/rhomb.svg";
 
 const works = await getCollection("works");
 ---
@@ -49,7 +49,7 @@ const works = await getCollection("works");
         />
       </span>
 
-      <div aria-hidden="true" class="absolute w-full -z-1">
+      <span aria-hidden="true" class="absolute w-full -z-1">
         <Blob
           style="fill: var(--color-accent);"
           class="w-[72svw] max-h-[78svw] aspect-[7/8] absolute -top-8 -left-6 md:w-[42%] md:-left-10 md:top-0"
@@ -58,7 +58,7 @@ const works = await getCollection("works");
           stroke="currentColor"
           class="w-[36svw] aspect-[7/8] absolute top-2 md:w-[27%] md:top-[1.5lh]"
         />
-      </div>
+      </span>
     </h1>
 
     <p class="mb-4 z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
@@ -72,20 +72,20 @@ const works = await getCollection("works");
       />
     </p>
     <p class="z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
-      I'm passionate about making technology accessible to everyone and I enjoy
+      I'm dedicated to creating technology accessible to everyone and I enjoy
       helping design teams grow by mentoring junior designers and sharing my
       knowledge.
     </p>
   </section>
 
-  <section>
+  <section id="work">
     <h2 class="heading-m">Work</h2>
     <ul class="flex flex-col gap-y-7.5 md:gap-y-10 lg:gap-y-15 xl:gap-y-20">
       {works.map((work) => <Work data={work.data} id={work.id} />)}
     </ul>
   </section>
 
-  <section>
+  <section id="about">
     <h2 class="heading-m">About</h2>
     <div class="grid gap-7.5 sm:grid-cols-2 md:gap-10">
       <p class="col-span-full w-[min(30em,_100%)] text-pretty">
@@ -150,7 +150,7 @@ const works = await getCollection("works");
     </div>
   </section>
 
-  <section>
+  <section id="articles">
     <h2 class="heading-m">Talks&Articles</h2>
     <ul class="grid gap-7.5 lg:grid-cols-2 md:gap-10">
       <li class="flex items-end aspect-video relative bg-grey rounded-xl card">
@@ -170,12 +170,10 @@ const works = await getCollection("works");
       </li>
       <li class="aspect-video overflow-hidden rounded-xl w-full">
         <iframe
-          width="100%"
-          height="100%"
+          class="w-full h-full"
           loading="lazy"
           src="https://www.youtube-nocookie.com/embed/uyA54-uiUHc?si=mDuFcIrUk8G-U9m8"
           title="Design for Accessibility. YouTube video player"
-          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen></iframe>

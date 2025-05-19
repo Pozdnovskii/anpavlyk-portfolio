@@ -1,0 +1,491 @@
+---
+import { Image } from "astro:assets";
+
+import "../styles/work.css";
+
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/HeroWorkPage.astro";
+import HandStroke from "../components/HandStroke.astro";
+
+import TablePageBefore from "../assets/images/works/asset-management-app/table-page-before.png";
+import TablePageAfter from "../assets/images/works/asset-management-app/table-page-after.png";
+import StrategyPageAfter from "../assets/images/works/asset-management-app/strategy-page-after.png";
+import StrategyPageBeforeFirst from "../assets/images/works/asset-management-app/strategy-page-before-1.png";
+import StrategyPageBeforeSecond from "../assets/images/works/asset-management-app/strategy-page-before-2.png";
+import StrategyPageBeforeThird from "../assets/images/works/asset-management-app/strategy-page-before-3.png";
+import UserTesting from "../assets/images/works/asset-management-app/user-testing.png";
+import UserFeedback from "../assets/images/works/asset-management-app/user-feedback.png";
+import InterviewQuestions from "../assets/images/works/asset-management-app/interview-questions.png";
+import ConceptFirst from "../assets/images/works/asset-management-app/concept-1.png";
+import ConceptSecond from "../assets/images/works/asset-management-app/concept-2.png";
+import ConceptThird from "../assets/images/works/asset-management-app/concept-3.png";
+import TutorialsFirst from "../assets/images/works/asset-management-app/tutorials-1.png";
+import TutorialsSecond from "../assets/images/works/asset-management-app/tutorials-2.png";
+
+import Users from "../assets/images/works/asset-management-app/users.svg";
+import Define from "../assets/images/works/asset-management-app/define.svg";
+import Deliver from "../assets/images/works/asset-management-app/deliver.svg";
+---
+
+<Layout title="Asset management app redesign">
+  <Hero
+    title="Asset management app redesign"
+    description="The project enhanced user satisfaction by redesigning the two most used pages of the app for various user roles."
+    secondDescription="This update enhanced usability, leading to 15% increase in user satisfaction rate."
+    client="Spectraxe"
+    role="UX/UI designer"
+    duration="Aug 2023 — present time"
+    goal="Redesign the Accounts & Strategies table and strategy's page layout to create a more intuitive and visually appealing layout that facilitates easier navigation and comprehension of data."
+    outcome="The redesign produced a streamlined interface that significantly improved user interaction, offering an intuitive and visually cohesive layout."
+  />
+
+  <section class="work__section two-cols">
+    <h2 class="heading-l">Process</h2>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="1" />
+        Discover
+      </h3>
+
+      <section>
+        <h4 class="heading-s mb-[0.875em]">Research</h4>
+        <p>
+          I gathered <span class="font-bold"
+            >users and stakeholders feedback</span
+          > on existing design weaknesses. I explored the problems and areas for
+          improvement.
+        </p>
+      </section>
+      <section class="md:relative">
+        <h4 class="heading-s mb-[0.875em]">Interview with users</h4>
+        <p>
+          During my business trip to the client's office, I conducted in-depth
+          interviews with <span class="font-bold">5 users</span> across
+          <span class="font-bold">various roles</span> and needs.
+        </p>
+        <figure id="discover-figure" class="grid gap-4 md:gap-0">
+          <figcaption class="sr-only">
+            Insights from user research for the redesign of the Accounts &
+            Strategies Table, including interview questions and collected
+            feedback.
+          </figcaption>
+          <Image
+            class="max-w-full white-image md:col-span-2 md:w-4/5 z-1"
+            src={InterviewQuestions}
+            alt="Interview questions for users of the Accounts & Strategies Table, categorized by user roles including OPS, Analyst, and Portfolio Manager."
+            widths={[300, 380, 620, 720, InterviewQuestions.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${InterviewQuestions.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+          <Image
+            class="max-w-full white-image md:col-2 md:-translate-3"
+            src={UserFeedback}
+            alt="User feedback and feature requests for the redesigned Accounts & Strategies Table, listing seven specific improvements including customization and contextual columns."
+            widths={[300, 380, 610, UserFeedback.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 1024px) 610px, ${UserFeedback.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+        <Users
+          aria-hidden="true"
+          class="hidden md:block md:absolute md:w-1/4 md:aspect-video md:-translate-y-1/2"
+        />
+      </section>
+      <section>
+        <h4 class="heading-s mb-[0.875em]">Insights:</h4>
+        <ol class="list-decimal list">
+          <li>
+            The table content <span class="font-bold"
+              >missed contextual elements</span
+            > like ‘the created date’, ‘salesperson’ valuable for different user
+            types.
+          </li>
+          <li>
+            Main focus of the table should be on <span class="font-bold"
+              >‘live’ accounts</span
+            >, as they are relevant and the most important for all the user
+            types.
+          </li>
+          <li>
+            Different users use the table for different needs, it’s important
+            for <span class="font-bold">the table to be customisable</span>, and
+            to have ability to save this custom view.
+          </li>
+        </ol>
+      </section>
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="2" />
+        Define
+      </h3>
+      <section class="md:relative">
+        <h4 class="heading-s mb-[0.875em]">Problems of the table view</h4>
+        <p class="block mb-[0.875em]">Based on interviews and feedback</p>
+        <ul class="list-disc list">
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Limited filter options&nbsp;
+            </h5>
+            <span
+              >— few filters available, and they are positioned separately,
+              making them less convenient to use.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              User focus mismatch&nbsp;
+            </h5>
+            <span
+              >— users primarily search for specific strategies and their
+              details, but the table is centred around accounts, resulting in
+              unnecessary extra clicks.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Incomplete data display&nbsp;
+            </h5>
+            <span
+              >— some columns pertain only to strategies, leaving half of the
+              table blank when displaying other data.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Inefficient loading&nbsp;
+            </h5>
+            <span
+              >— the table content does not load efficiently, impacting user
+              experience.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">Columns set&nbsp;</h5>
+            <span
+              >— the order of columns is not optimal, and some potentially
+              beneficial columns are missing.</span
+            >
+          </li>
+        </ul>
+        <figure class="card card_big-grey gap-y-[1em]">
+          <figcaption class="font-bold">
+            Table page before the redesign
+          </figcaption>
+          <Image
+            class="w-full"
+            src={TablePageBefore}
+            alt="Screenshot of the table page of the Asset management app before redesign"
+            widths={[300, 380, 620, 720, 900, TablePageBefore.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TablePageBefore.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+        <Define
+          aria-hidden="true"
+          class="hidden md:block md:absolute md:w-1/4 md:aspect-7/6 md:self-start md:-translate-y-6"
+        />
+      </section>
+
+      <section>
+        <h4 class="heading-s mb-[0.875em]">Problems of the strategy page:</h4>
+        <ul class="list-disc list">
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Inefficient use of space&nbsp;
+            </h5>
+            <span
+              >— the critical information was surrounded by excessive empty
+              space, causing elements being overlooked and key actions being
+              harder to find.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Complex navigation due to multiple levels of tabs&nbsp;
+            </h5>
+            <span
+              >— the use of multiple tabs across several hierarchical levels
+              made it difficult for users to navigate.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Irrelevant component borrowing from previous screens&nbsp;
+            </h5>
+            <span
+              >— the major header area was carried over from a previous screen
+              (the table), but was out of context on the strategy page.</span
+            >
+          </li>
+        </ul>
+        <figure class="card card_big-grey gap-y-[1em] pb-0">
+          <figcaption class="font-bold">
+            Table page before the redesign
+          </figcaption>
+          <div
+            class="flex flex-col justify-between overflow-hidden aspect-7/4 relative md:w-9/10 md:mx-auto *:w-5/7 *:aspect-8/3"
+          >
+            <Image
+              class=""
+              src={StrategyPageBeforeFirst}
+              alt="This screenshot shows the advisor summary, which includes account details and performance metrics"
+              widths={[300, 380, 620, 720, 900, StrategyPageBeforeFirst.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageBeforeFirst.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+            <Image
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/5"
+              src={StrategyPageBeforeSecond}
+              alt="This screenshot displays the advisor dashboard, which shows performance and position data"
+              widths={[300, 380, 620, 720, 900, StrategyPageBeforeSecond.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageBeforeSecond.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+            <Image
+              class="self-end z-2 translate-y-1/4"
+              src={StrategyPageBeforeThird}
+              alt="This screenshot highlights the performance metrics and proposal details"
+              widths={[300, 380, 620, 720, 900, StrategyPageBeforeThird.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageBeforeThird.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+        </figure>
+      </section>
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="3" />
+        Develop
+      </h3>
+
+      <section>
+        <h4 class="heading-s mb-[0.875em]">Prototypes</h4>
+        <p>
+          I generated a range of ideas and potential solutions, created simple
+          prototypes.
+        </p>
+        <figure class="card card_big-grey gap-y-[1em] pb-0">
+          <figcaption class="font-bold">Concepts</figcaption>
+          <div
+            class="w-full flex flex-col justify-between overflow-hidden aspect-2 relative *:w-7/8"
+          >
+            <Image
+              class=""
+              src={ConceptFirst}
+              alt="Performance report with returns by type and date range"
+              widths={[300, 380, 620, 720, 900, ConceptFirst.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${ConceptFirst.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+            <Image
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2/5"
+              src={ConceptSecond}
+              alt="Client accounts list with strategy and allocation details"
+              widths={[300, 380, 620, 720, 900, ConceptSecond.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${ConceptSecond.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+            <Image
+              class="self-end z-2 translate-y-1/4"
+              src={ConceptThird}
+              alt="Strategy focus and ticker list for selected accounts"
+              widths={[300, 380, 620, 720, 900, ConceptThird.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${ConceptThird.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+        </figure>
+      </section>
+      <section>
+        <h4 class="heading-s mb-[0.875em]">User testing</h4>
+        <p>
+          I tested my concepts with end users and stakeholders, refined my ideas
+          based on the feedback and defined the solution. I used <span
+            class="font-bold">interactive prototypes</span
+          > to test with users once again and then moved forward to developing design
+          specifications.
+        </p>
+        <figure>
+          <figcaption class="sr-only">Scenario for User testing</figcaption>
+          <Image
+            class="max-w-full white-image"
+            src={UserTesting}
+            alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
+            widths={[300, 380, 620, 720, UserTesting.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${UserTesting.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="4" />
+        Deliver
+      </h3>
+
+      <section class="md:relative">
+        <h4 class="heading-s mb-[0.875em]">Solution for the table view</h4>
+        <p class="mb-[0.875em]">
+          Improvement of the table view by making data easier to access,
+          simplifying navigation, and giving users more ways to customize their
+          experience.
+        </p>
+        <ul class="list-disc list">
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Surface-level strategies&nbsp;
+            </h5>
+            <span
+              >— moving strategies to the forefront makes strategic information
+              more accessible, aligning with the main user scenario.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Simplified navigation&nbsp;
+            </h5>
+            <span
+              >— removing the tree structure simplifies navigation, helping
+              users find data more easily.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Efficient filtering&nbsp;
+            </h5>
+            <span
+              >— adding filters to all columns enhances efficiency by allowing
+              users to quickly sort and locate specific information.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Advanced column customization&nbsp;
+            </h5>
+            <span
+              >— providing the ability to resize, move, and customize columns
+              with a new menu enhances table usability and personalization by
+              allowing users to arrange and modify columns to suit their
+              preferences.</span
+            >
+          </li>
+        </ul>
+        <figure class="card card_big-grey gap-y-[1em]">
+          <figcaption class="font-bold">
+            Table page after the redesign
+          </figcaption>
+          <Image
+            class="w-full"
+            src={TablePageAfter}
+            alt="Screenshot of the table page of the Asset management app after redesign"
+            widths={[300, 380, 620, 720, 900, TablePageAfter.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TablePageAfter.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+
+        <Deliver
+          aria-hidden="true"
+          class="hidden md:block md:absolute md:w-1/4 md:aspect-16/19 md:self-start md:-translate-y-6"
+        />
+      </section>
+
+      <section>
+        <h4 class="heading-s mb-[0.875em]">Solution for the strategy page:</h4>
+
+        <ul class="list-disc list">
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Sufficient use of space&nbsp;
+            </h5>
+            <span
+              >— all important widgets are moved to a single dashboard with the
+              option to customize the view.</span
+            >
+          </li>
+          <li>
+            <h5 class="text-[1em] font-bold inline">
+              Improved navigation&nbsp;
+            </h5>
+            <span
+              >— users have the ability to switch between different account
+              strategies or view an aggregated account mode.</span
+            >
+          </li>
+        </ul>
+        <figure class="card card_big-grey gap-y-[1em]">
+          <figcaption class="font-bold">
+            Strategy page after the redesign
+          </figcaption>
+          <Image
+            class="w-full"
+            src={StrategyPageAfter}
+            alt="Screenshot of the Strategy page of the Asset management app after redesign"
+            widths={[300, 380, 620, 720, 900, StrategyPageAfter.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageAfter.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section id="tutorials">
+        <h4 class="heading-s mb-[0.875em]">
+          Tutorials for users to introduce new features
+        </h4>
+        <p>
+          I prepared short descriptions and videos for users so they can quickly
+          become acquainted with the new features.
+        </p>
+
+        <figure
+          class="card card_big-grey gap-x-[1em] pb-0 overflow-hidden flex-row justify-center *:max-w-[min(50%,350px)]"
+        >
+          <figcaption class="sr-only">
+            Quick guides to new table features: filtering, sorting, and layout
+            tools.
+          </figcaption>
+          <Image
+            src={TutorialsFirst}
+            alt="Table UI with column filtering, resizing, and sorting"
+            widths={[300, 380, 620, 720, 900, TutorialsFirst.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TutorialsFirst.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+          <Image
+            class="self-start -translate-y-[clamp(12px,3.3svw,36px)]"
+            src={TutorialsSecond}
+            alt="Table UI with strategy links and layout settings"
+            widths={[300, 380, 620, 720, 900, TutorialsSecond.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TutorialsSecond.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+    </section>
+  </section>
+
+  <section class="work__section two-cols">
+    <h2 class="heading-l">Outcome</h2>
+  </section>
+</Layout>

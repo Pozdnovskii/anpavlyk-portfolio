@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import Arrow from "../assets/svg/arrow.svg";
-import External from "../assets/svg/external.svg";
+import Arrow from "../assets/images/svg/arrow.svg";
+import External from "../assets/images/svg/external.svg";
 
 const { data, id } = Astro.props;
 const isExternal = data.behanceUrl;
@@ -9,12 +9,12 @@ const href = isExternal ? data.behanceUrl : `${id}`;
 ---
 
 <li
-  class="flex flex-col gap-y-3 bg-grey rounded-2xl card pb-0 md:gap-y-4 lg:gap-y-5"
+  class="card card_big-grey gap-y-3 pb-0 relative overflow-hidden *:z-1 *:not-[a]:pointer-events-none md:gap-y-4 lg:gap-y-5 after:block after:w-1/4 after:aspect-square after:rounded-full after:bg-accent after:absolute after:top-0 after:right-0 after:z-0 after:translate-x-full after:-translate-y-full after:opacity-0 after:transition has-[a:hover]:after:translate-x-1/12 has-[a:hover]:after:-translate-y-1/4 has-[a:hover]:after:opacity-100"
 >
   <a
     href={href}
-    target={isExternal ? "_blank" : "__self"}
-    class="flex justify-between gap-x-4 items-center"
+    target={isExternal ? "_blank" : "_self"}
+    class="flex justify-between gap-x-4 items-center before:absolute before:inset-0 before:z-2"
   >
     <h3 class="heading-s">{data.title}</h3>
     {
@@ -47,7 +47,7 @@ const href = isExternal ? data.behanceUrl : `${id}`;
     }
   </ul>
   <Image
-    class="w-full mx-auto aspect-2/1 object-top sm:w-4/5"
+    class="w-full mx-auto aspect-2/1 object-top md:w-8/9 lg:w-7/8 xl:w-6/7"
     src={data.cover}
     alt={data.coverAlt}
     widths={[300, 380, 540, 720, 900, data.cover.width]}
