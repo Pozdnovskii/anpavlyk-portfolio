@@ -110,6 +110,29 @@
     @apply flex flex-col bg-grey rounded-2xl;
   }
 
+  #burger-line-top,
+  #burger-line-middle,
+  #burger-line-bottom {
+    transform-origin: center;
+    rotate: 0deg;
+    translate: 0;
+    transition: all 240ms ease-in-out;
+  }
+
+  #header-btn[aria-expanded="true"] #burger-line-top {
+    rotate: 45deg;
+    translate: -2px 4px;
+  }
+
+  #header-btn[aria-expanded="true"] #burger-line-bottom {
+    rotate: -45deg;
+    translate: -2px -4px;
+  }
+
+  #header-btn[aria-expanded="true"] #burger-line-middle {
+    scale: 0;
+  }
+
   .white-image {
     @apply border border-grey shadow-xl shadow-grey/20;
   }
