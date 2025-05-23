@@ -28,7 +28,7 @@ const isHomePage = Astro.url.pathname === "/";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="view-transition" content="same-origin" />
   </head>
-  <body class="md:text-[18px] lg:text-[20px] xl:text-[24px]">
+  <body class="antialiased md:text-[1.125rem] lg:text-[1.25em] xl:text-[1.5em]">
     <header
       id="header"
       class="wrapper text-em-sm flex justify-between items-center gap-4 sticky top-0 bg-secondary z-6 py-3 after:absolute after:inset-x-0 after:top-0 after:h-full after:bg-secondary after:border-b after:border-grey lg:after:hidden"
@@ -76,9 +76,7 @@ const isHomePage = Astro.url.pathname === "/";
           class="flex flex-col gap-[1em] leading-none pt-[calc(--spacing(9)+45px)] lg:pt-0 *:flex *:opacity-0 *:translate-x-[6em] *:transition lg:*:translate-x-0 lg:*:opacity-100 [&_a]:px-[1em] [&_a]:py-[.66em] [&_a]:rounded-full [&_a]:hover:bg-accent [&_a]:transition-colors lg:flex-row"
         >
           <li class="delay-250">
-            <a href={isHomePage ? "/#work" : "/"}>
-              {isHomePage ? "Work" : "Home"}</a
-            >
+            <a href='/#work"'>Work</a>
           </li>
           <li class="delay-350"><a href="/#about">About</a></li>
           <li class="delay-450">
