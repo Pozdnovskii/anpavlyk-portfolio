@@ -28,10 +28,10 @@ const isHomePage = Astro.url.pathname === "/";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="view-transition" content="same-origin" />
   </head>
-  <body class="md:text-lg lg:text-xl xl:text-2xl">
+  <body class="md:text-[18px] lg:text-[20px] xl:text-[24px]">
     <header
       id="header"
-      class="wrapper text-em-sm flex justify-between items-center gap-4 font-semibold sticky top-0 bg-secondary z-6 py-3 after:absolute after:inset-x-0 after:top-0 after:h-full after:bg-secondary after:border-b after:border-grey lg:after:hidden"
+      class="wrapper text-em-sm flex justify-between items-center gap-4 sticky top-0 bg-secondary z-6 py-3 after:absolute after:inset-x-0 after:top-0 after:h-full after:bg-secondary after:border-b after:border-grey lg:after:hidden"
     >
       <a href="/" aria-label="Home Page" class="z-1"
         ><span aria-hidden="true">Anastasiya Pavlyk</span></a
@@ -88,13 +88,13 @@ const isHomePage = Astro.url.pathname === "/";
         <a
           href="https://www.linkedin.com/in/anastasiya-pavlyk/"
           target="_blank"
-          class="flex flex-row-reverse items-center gap-x-2.5 ps-[1em] opacity-0 transition delay-120 lg:opacity-100 lg:ps-0"
+          class="flex flex-row-reverse items-center gap-x-[.5em] ps-[1em] opacity-0 transition delay-120 lg:opacity-100 lg:ps-0"
         >
           <span>Let's connect</span>
           <Linkedin
             aria-label="LinkedIn Profile"
             fill="currentColor"
-            class="w-7 max-w-[45px] aspect-square"
+            class="w-[1.4em] max-w-[45px] aspect-square"
           />
         </a>
       </nav>
@@ -182,7 +182,6 @@ const isHomePage = Astro.url.pathname === "/";
 
     const closeMenu = () => {
       mobileMenu.classList.remove("mob-menu_active");
-      // mobileMenu.removeAttribute("data-menu");
       toggleButton.setAttribute("aria-expanded", "false");
       document.body.style.overflowY = "";
 
@@ -198,14 +197,20 @@ const isHomePage = Astro.url.pathname === "/";
 
     menuLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        closeMenu();
-        // setTimeout(() => {
-        //   window.history.pushState({}, "", window.location.pathname);
-        // }, 10);
+        if (window.innerWidth < 768) {
+          closeMenu();
+        }
+
         setTimeout(() => {
           history.replaceState(null, "", window.location.pathname);
         }, 10);
       });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768 && mobileMenu.style.display === "none") {
+        openMenu();
+      }
     });
   });
 </script>

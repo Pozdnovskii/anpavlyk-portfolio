@@ -31,7 +31,12 @@ figure img {
   margin-bottom: var(--spacing-section);
 }
 
-.work-section__step > section:not(:last-of-type) {
+.work-section__step > section:not(:last-of-type),
+.heading-m {
+  margin-bottom: var(--spacing-section-xs);
+}
+
+.work-section__step > section:not(:last-of-type):has(figure) {
   margin-bottom: var(--spacing-section-sm);
 }
 

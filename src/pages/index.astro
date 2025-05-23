@@ -64,7 +64,7 @@ const works = await getCollection("works");
       </span>
     </h1>
 
-    <p class="mb-4 z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
+    <p class="mb-4 text-light z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
       I'm an interface designer with 4 years of experience, specializing in
       creating user-friendly financial interfaces for web and mobile.
       <Crown
@@ -74,7 +74,7 @@ const works = await getCollection("works");
         class="hidden md:block md:absolute md:top-0 md:left-0 md:aspect-square md:-translate-x-3/4 md:-translate-y-full"
       />
     </p>
-    <p class="z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
+    <p class="text-light z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
       I'm dedicated to creating technology accessible to everyone and I enjoy
       helping design teams grow by mentoring junior designers and sharing my
       knowledge.
@@ -83,7 +83,7 @@ const works = await getCollection("works");
 
   <section id="work">
     <h2 class="heading-m">Work</h2>
-    <ul class="flex flex-col gap-y-7.5 md:gap-y-10 lg:gap-y-15 xl:gap-y-20">
+    <ul class="flex flex-col gap-y-section-sm">
       {works.map((work) => <Work data={work.data} id={work.id} />)}
     </ul>
   </section>
