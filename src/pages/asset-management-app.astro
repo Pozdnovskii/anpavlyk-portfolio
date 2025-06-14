@@ -21,11 +21,16 @@ import ConceptSecond from "../assets/images/works/asset-management-app/concept-2
 import ConceptThird from "../assets/images/works/asset-management-app/concept-3.png";
 import TutorialsFirst from "../assets/images/works/asset-management-app/tutorials-1.png";
 import TutorialsSecond from "../assets/images/works/asset-management-app/tutorials-2.png";
+import SidePanelFirst from "../assets/images/works/asset-management-app/side-panel-1.png";
+import SidePanelSecond from "../assets/images/works/asset-management-app/side-panel-2.png";
+import MetricBefore from "../assets/images/works/asset-management-app/metric-before.png";
+import MetricAfter from "../assets/images/works/asset-management-app/metric-after.png";
 
 import Star from "../components/Star.astro";
 import Users from "../assets/images/works/asset-management-app/users.svg";
 import Define from "../assets/images/works/asset-management-app/define.svg";
 import Deliver from "../assets/images/works/asset-management-app/deliver.svg";
+import CurleyArrow from "../assets/images/works/asset-management-app/curley-arrow.svg";
 ---
 
 <Layout
@@ -35,12 +40,11 @@ import Deliver from "../assets/images/works/asset-management-app/deliver.svg";
   <!-- client="Spectraxe" -->
   <Hero
     title="Asset management app redesign"
-    description="The project enhanced user satisfaction by redesigning the two most used pages of the app for various user roles."
-    secondDescription="This update enhanced usability, leading to 15% increase in user satisfaction rate."
+    description="The project improved usability by redesigning the two most-used pages of the app for various user roles, leading to a 21% increase in user satisfaction."
     role="UX/UI designer"
     duration="Aug 2023 — present time"
     goal="Redesign the Accounts & Strategies table and strategy's page layout to create a more intuitive and visually appealing layout that facilitates easier navigation and comprehension of data."
-    outcome="The redesign produced a streamlined interface that significantly improved user interaction, offering an intuitive and visually cohesive layout."
+    outcome="I redesigned two key pages to create a clean, user-friendly interface that increased satisfaction by 21%, making the user experience better."
     Icon={Star}
   />
 
@@ -115,7 +119,7 @@ import Deliver from "../assets/images/works/asset-management-app/deliver.svg";
             types.
           </li>
           <li>
-            Different users use the table for different needs, it’s important
+            Different users use the table for different needs, it's important
             for <span class="font-bold">the table to be customisable</span>, and
             to have ability to save this custom view.
           </li>
@@ -414,6 +418,45 @@ import Deliver from "../assets/images/works/asset-management-app/deliver.svg";
       </section>
 
       <section>
+        <h4 class="heading-s mb-[0.875em]">
+          <span style="font-variation-settings: 'wght' 400"
+            >I compiled comprehensive</span
+          > design documentation,
+          <span style="font-variation-settings: 'wght' 400">including:</span>
+        </h4>
+
+        <ul class="list-disc list">
+          <li>detailed UI mockups,</li>
+          <li>interaction flows,</li>
+          <li>technical specifications for developers.</li>
+        </ul>
+
+        <figure class="card card_big-grey gap-[1em] md:grid md:grid-cols-2">
+          <figcaption class="font-bold md:col-span-2">
+            Specifications for the side panel
+          </figcaption>
+          <Image
+            class="w-full without-radius"
+            src={SidePanelFirst}
+            alt="Screenshot of the Strategy page of the Asset management app after redesign"
+            widths={[300, 380, 620, 720, 900, SidePanelFirst.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${SidePanelFirst.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+          <Image
+            class="w-full without-radius"
+            src={SidePanelSecond}
+            alt="Screenshot of the Strategy page of the Asset management app after redesign"
+            widths={[300, 380, 620, 720, 900, SidePanelSecond.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${SidePanelSecond.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+
+      <section>
         <h4 class="heading-s mb-[0.875em]">Solution for the strategy page:</h4>
 
         <ul class="list-disc list">
@@ -490,7 +533,78 @@ import Deliver from "../assets/images/works/asset-management-app/deliver.svg";
     </section>
   </section>
 
-  <section class="work__section two-cols">
+  <section id="outcome" class="work__section two-cols">
     <h2 class="heading-l">Outcome</h2>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">Improved metric & feedback</h3>
+      <p class="mb-section-sm">
+        User feedback collected via surveys revealed an average satisfaction
+        score of 4.6/5 across 7 key table characteristics compared to 3.8/5
+        before the redesign.
+      </p>
+
+      <div
+        class="card card_big-grey gap-y-section-sm md:col-span-2 md:grid md:grid-cols-25 md:gap-y-0"
+      >
+        <figure class="relative flex flex-col gap-y-[1em]">
+          <figcaption class="font-bold">Before the redesign</figcaption>
+          <Image
+            class="w-full border border-light/10"
+            src={MetricBefore}
+            alt="Table UI with column filtering, resizing, and sorting"
+            widths={[300, 380, 620, 720, 900, MetricBefore.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${MetricBefore.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+          <CurleyArrow
+            aria-hidden="true"
+            class="absolute bottom-0 h-[calc(var(--spacing-section-sm)+1em)] start-[10em] translate-y-9/8 md:h-1/3 md:start-auto md:bottom-auto md:top-[2em] md:end-0 md:rotate-315 md:translate-x-4/3 md:translate-y-2/3"
+          />
+        </figure>
+
+        <figure class="flex flex-col gap-y-[1em]">
+          <figcaption class="font-bold md:self-end">
+            After the redesign
+          </figcaption>
+          <Image
+            class="w-full border border-light/10 z-1"
+            src={MetricAfter}
+            alt="Table UI with strategy links and layout settings"
+            widths={[300, 380, 620, 720, 900, MetricAfter.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${MetricAfter.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section
+      class="work-section__step [&_span]:font-bold [&_p:not(:last-child)]:pb-4"
+    >
+      <h3 class="heading-m">Now</h3>
+      <p>
+        While <span>analysing</span> some <span>feedback,</span> I found out that
+        certain solutions were <span>ineffective for senior team members,</span
+        >, who had been missed during user testing. The representation of the
+        account links gave them an impression that this is the only clickable
+        element, and by that <span>made their flow more complicated.</span>
+      </p>
+      <p>
+        This was a very <span>insightful finding.</span> Fortunately, the necessary
+        changes were minor and quick to implement.
+      </p>
+      <p>
+        We keep getting user feedback and working on small <span
+          >improvements</span
+        > for the redesigned pages.
+      </p>
+      <p>
+        <span>The new redesign scope</span> is being planned for the other pages
+        of the app.
+      </p>
+    </section>
   </section>
 </Layout>

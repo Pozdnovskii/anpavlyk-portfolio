@@ -167,7 +167,7 @@ const isHomePage = Astro.url.pathname === "/";
   document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById("header-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-    const menuLinks = mobileMenu.querySelectorAll('a[href^="/#"]');
+    const menuLinks = mobileMenu.querySelectorAll("a");
 
     const openMenu = () => {
       mobileMenu.style.display = "flex";

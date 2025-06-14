@@ -1,0 +1,353 @@
+---
+import { Image } from "astro:assets";
+
+import "../styles/work.css";
+
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/HeroWorkPage.astro";
+import HandStroke from "../components/HandStroke.astro";
+
+import TablePageBefore from "../assets/images/works/asset-management-app/table-page-before.png";
+import TablePageAfter from "../assets/images/works/asset-management-app/table-page-after.png";
+import StrategyPageAfter from "../assets/images/works/asset-management-app/strategy-page-after.png";
+import StrategyPageBeforeFirst from "../assets/images/works/asset-management-app/strategy-page-before-1.png";
+import StrategyPageBeforeSecond from "../assets/images/works/asset-management-app/strategy-page-before-2.png";
+import StrategyPageBeforeThird from "../assets/images/works/asset-management-app/strategy-page-before-3.png";
+import UserTesting from "../assets/images/works/asset-management-app/user-testing.png";
+import UserFeedback from "../assets/images/works/asset-management-app/user-feedback.png";
+import InterviewQuestions from "../assets/images/works/asset-management-app/interview-questions.png";
+import ConceptFirst from "../assets/images/works/asset-management-app/concept-1.png";
+import ConceptSecond from "../assets/images/works/asset-management-app/concept-2.png";
+import ConceptThird from "../assets/images/works/asset-management-app/concept-3.png";
+import TutorialsFirst from "../assets/images/works/asset-management-app/tutorials-1.png";
+import TutorialsSecond from "../assets/images/works/asset-management-app/tutorials-2.png";
+
+import SpecificationsFirst from "../assets/images/works/spectraxe/specifications-1.png";
+import SpecificationsSecond from "../assets/images/works/spectraxe/specifications-2.png";
+
+import Star from "../components/Star.astro";
+import Book from "../assets/images/works/asset-management-app/book.svg";
+import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
+---
+
+<Layout
+  title="Introducing the block trade functionality"
+  description="The feature streamlined large-volume transactions and boosted the option trading platform."
+>
+  <Hero
+    title="Introducing the block trade functionality"
+    description="The feature streamlined large-volume transactions and boosted the option trading platform."
+    client="Spectraxe"
+    role="UX/UI designer"
+    duration="Mar 2025 — present time"
+    goal="Create a new mechanism for booking and matching — block trades, which provides the ability to liquidity providers to book pre-agreed trades with a known counterparty."
+    outcome="The block trade feature simplifies the trading process by allowing users to consolidate large orders into one transaction. The intuitive interface allows liquidity providers to input trade details, verify counterparties, and confirm transactions securely. Feedback from users emphasises the platform's ease of use and reliability."
+    Icon={Star}
+  />
+
+  <section class="work__section two-cols">
+    <h2 class="heading-l">Process</h2>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="1" />
+        Problem exploration
+      </h3>
+      <p>
+        I <span class="font-bold">researched the challenges</span> faced by liquidity
+        providers and traders when executing large orders, using <span
+          class="font-bold">user interviews</span
+        > provided by stakeholders, and compiled a summary of financial regulations
+        impacting block trades.
+      </p>
+
+      <div
+        class="card card_big-grey gap-y-section-sm md:col-span-2 md:grid md:grid-cols-25 md:gap-y-0 [&_img]:aspect-3/2"
+      >
+        <figure class="relative flex flex-col gap-y-[1em]">
+          <figcaption class="font-bold">Before the redesign</figcaption>
+          <Image
+            class="w-full border border-light/10"
+            src={TutorialsFirst}
+            alt="Table UI with column filtering, resizing, and sorting"
+            widths={[300, 380, 620, 720, 900, TutorialsFirst.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TutorialsFirst.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+
+        <figure class="flex flex-col gap-y-[1em]">
+          <figcaption class="font-bold md:self-end">
+            After the redesign
+          </figcaption>
+          <Image
+            class="w-full border border-light/10 z-1"
+            src={TutorialsSecond}
+            alt="Table UI with strategy links and layout settings"
+            widths={[300, 380, 620, 720, 900, TutorialsSecond.width]}
+            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TutorialsSecond.width}px`}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+
+      <p class="mb-[0.875em]">
+        From my research, I identified <span class="font-bold"
+          >regulatory standards</span
+        > and <span class="font-bold">key benefits</span> of block trade functionality
+        for institutional traders:
+      </p>
+
+      <ul class="list-disc list">
+        <li>
+          Off-exchange execution of large trades <span class="font-bold"
+            >reduces price volatility,</span
+          > preserving trade value.
+        </li>
+        <li>
+          Aggregated trades <span class="font-bold"
+            >lower transaction fees.</span
+          >
+        </li>
+        <li>
+          Confidential deal negotiations prevent market sentiment shifts, <span
+            class="font-bold">protecting trader strategies.</span
+          >
+        </li>
+      </ul>
+
+      <Book
+        aria-hidden="true"
+        class="hidden md:block md:w-full md:aspect-7/2 md:row-start-1 md:row-end-3 md:self-end"
+        stroke="currentColor"
+      />
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="2" />
+        Defining requirements
+      </h3>
+      <p>
+        In collaboration with the stakeholders we defined the following
+        successful flow:
+      </p>
+
+      <figure>
+        <figcaption class="sr-only">Scenario for User testing</figcaption>
+        <Image
+          class="max-w-full white-image"
+          src={UserTesting}
+          alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
+          widths={[300, 380, 620, 720, UserTesting.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${UserTesting.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
+
+      <p class="mb-[0.875em]">
+        Based on insights from the exploration phase and collaboration with the
+        stakeholders, I worked together with business analyst and developers to
+        define clear functional and non-functional requirements.
+      </p>
+      <h4 class="heading-s mb-[0.875em]">Key requirements included:</h4>
+      <ol class="list-decimal list">
+        <li>
+          An <span class="font-bold">order entry</span> window for liquidity providers
+          initiating pre-agreed trades.
+        </li>
+        <li>
+          Preview screen for liquidity providers to be able to <span
+            class="font-bold">cancel the trade</span
+          > before it's accepted.
+        </li>
+        <li>
+          A user interface for participants for <span class="font-bold"
+            >confirming or rejecting</span
+          > pre-agreed trades.
+        </li>
+        <li>
+          <span class="font-bold">Notification</span> about the block trade pending.
+        </li>
+        <li>
+          The order description with a <span class="font-bold">pending</span> status
+          available in a blotter.
+        </li>
+        <li>
+          <span class="font-bold">Post-trade ticket</span> for the both sides of
+          the block trade.
+        </li>
+      </ol>
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="3" />
+        Architecture & wireframing
+      </h3>
+      <p>
+        Next, I designed 2 variants of the system architecture to propose them
+        to the team and stakeholders to select the best option together.
+      </p>
+
+      <figure class="card card_big-grey gap-[1em] md:grid md:grid-cols-2">
+        <figcaption class="font-bold md:col-span-2">
+          Concepts of the flow's starting points
+        </figcaption>
+        <Image
+          class="w-full"
+          src={StrategyPageAfter}
+          alt="Screenshot of the Strategy page of the Asset management app after redesign"
+          widths={[300, 380, 620, 720, 900, StrategyPageAfter.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageAfter.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          class="w-full"
+          src={StrategyPageAfter}
+          alt="Screenshot of the Strategy page of the Asset management app after redesign"
+          widths={[300, 380, 620, 720, 900, StrategyPageAfter.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageAfter.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
+
+      <p class="mb-[0.875em]">
+        We decided to <span class="font-bold">stick with the first option</span>
+        and make the block trade functionality <span class="font-bold"
+          >more distinctive</span
+        > from the regular order entry window.
+      </p>
+      <p class="mb-[0.875em]">
+        I mapped out <span class="font-bold"
+          >the flow ensuring seamless integration with the platform's
+          infrastructure. Using Figma, I created <span class="font-bold"
+            >wireframes</span
+          > to visualize the user journey:
+        </span>
+      </p>
+      <ul class="list-disc list mb-[0.875em]">
+        <li>
+          An order entry for initiating block trades, with fields for the time
+          of agreement and counterparty selection.
+        </li>
+        <li>A confirmation screen displaying trade terms.</li>
+        <li>
+          An acceptance screen for a participant and a preview screen with
+          ability to cancel for a liquidity provider.
+        </li>
+        <li>Notifications for pending block trade.</li>
+      </ul>
+      <p>
+        Iterative <span class="font-bold"
+          >feedback sessions with stakeholders</span
+        > refined the wireframes, balancing usability with technical feasibility
+        to create an intuitive experience for traders.
+      </p>
+
+      <figure>
+        <figcaption>Flow</figcaption>
+        <Image
+          class="max-w-full white-image"
+          src={UserTesting}
+          alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
+          widths={[300, 380, 620, 720, UserTesting.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${UserTesting.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
+
+      <Nastya
+        aria-hidden="true"
+        class="hidden md:block md:w-full md:aspect-3/2 md:row-start-4 md:row-end-8 md:self-end"
+        stroke="currentColor"
+      />
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">
+        <HandStroke number="4" />
+        Design documentation
+      </h3>
+      <p class="mb-[0.875em]">
+        In the final phase, I compiled comprehensive <span class="font-bold"
+          >design documentation,</span
+        > including:
+      </p>
+      <ul class="list-disc list">
+        <li>detailed UI mockups,</li>
+        <li>interaction flows,</li>
+        <li>technical specifications for developers.</li>
+      </ul>
+
+      <figure class="card card_big-grey gap-[1em] md:grid md:grid-cols-2">
+        <figcaption class="font-bold md:col-span-2">Specifications</figcaption>
+        <Image
+          class="w-full without-radius"
+          src={SpecificationsFirst}
+          alt="Screenshot of the Strategy page of the Asset management app after redesign"
+          widths={[300, 380, 620, 720, 900, SpecificationsFirst.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${SpecificationsFirst.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          class="w-full without-radius"
+          src={SpecificationsSecond}
+          alt="Screenshot of the Strategy page of the Asset management app after redesign"
+          widths={[300, 380, 620, 720, 900, SpecificationsSecond.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${SpecificationsSecond.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
+
+      <p class="mb-[0.875em]">
+        The documentation <span class="font-bold">outlined edge cases</span> and
+        <span class="font-bold">error-handling mechanisms</span> to ensure robustness.
+      </p>
+      <p>
+        <span class="font-bold">User testing</span> with a small group of traders
+        confirmed that the feature reduced complexity and improved trade predictability.
+        Final changes were made based on feedback, ensuring the design met the goal
+        of a clear, reliable block trade experience.
+      </p>
+
+      <figure>
+        <figcaption>States & details</figcaption>
+        <Image
+          class="max-w-full white-image"
+          src={UserTesting}
+          alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
+          widths={[300, 380, 620, 720, UserTesting.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${UserTesting.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
+    </section>
+  </section>
+
+  <section class="work__section two-cols">
+    <h2 class="heading-l">Outcome</h2>
+    <p>
+      The implementation of block trade functionality resulted in enhanced
+      efficiency for large-volume transactions, increased platform liquidity,
+      improved user experience, and a strengthened competitive edge in the
+      options trading market.
+    </p>
+
+    <section class="work-section__step">
+      <h3 class="heading-m">Now</h3>
+      <p>
+        We are working on expanding the block trade functionality with swaps.
+      </p>
+    </section>
+  </section>
+</Layout>
