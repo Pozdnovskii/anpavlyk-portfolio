@@ -2,10 +2,8 @@
 const { number } = Astro.props;
 ---
 
-<span
-  aria-hidden="true"
-  class="relative inline-block pe-[.5em] text-center w-[1.75em]"
-  >{number}
+<div aria-hidden="true" class="relative pe-[.5em] text-center w-[1.75em]">
+  {number}
   <svg
     viewBox="0 0 50 40"
     fill="none"
@@ -18,4 +16,4 @@ const { number } = Astro.props;
       stroke-width="2"
       stroke-linecap="round"></path>
   </svg>
-</span>
+</div>
