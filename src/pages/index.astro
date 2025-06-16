@@ -155,12 +155,14 @@ const works = await getCollection("works");
 
   <section id="articles">
     <h2 class="heading-m">Talks&Articles</h2>
-    <ul class="grid gap-7.5 lg:grid-cols-2 md:gap-10">
-      <li class="flex items-end aspect-video relative bg-grey rounded-xl card">
+    <ul class="grid gap-7.5 md:grid-cols-2">
+      <li
+        class="flex items-end aspect-video relative bg-grey rounded-xl card has-hover:bg-indigo-300 transition"
+      >
         <a
           href="https://www.linkedin.com/pulse/future-accessibility-devexperts-anastasiya-pavlyk-dx1zf/"
           target="_blank"
-          class="heading-m mb-0"
+          class="text-[clamp(1.125rem,calc(0.8rem+1.6svw),2.5rem)] mb-0 after:absolute after:inset-0 hover:underline"
           >The Future of Accessibility at&nbsp;Devexperts
         </a>
         <ArticleIcon

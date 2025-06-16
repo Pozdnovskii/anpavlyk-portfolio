@@ -21,9 +21,18 @@ import ConceptSecond from "../assets/images/works/asset-management-app/concept-2
 import ConceptThird from "../assets/images/works/asset-management-app/concept-3.png";
 import TutorialsFirst from "../assets/images/works/asset-management-app/tutorials-1.png";
 import TutorialsSecond from "../assets/images/works/asset-management-app/tutorials-2.png";
+import MetricBefore from "../assets/images/works/asset-management-app/metric-before.png";
+import MetricAfter from "../assets/images/works/asset-management-app/metric-after.png";
 
 import SpecificationsFirst from "../assets/images/works/spectraxe/specifications-1.png";
 import SpecificationsSecond from "../assets/images/works/spectraxe/specifications-2.png";
+import StateComponentFirst from "../assets/images/works/spectraxe/state-component-1.png";
+import StateComponentSecond from "../assets/images/works/spectraxe/state-component-2.png";
+import StateComponentThird from "../assets/images/works/spectraxe/state-component-3.png";
+import StateLoading from "../assets/images/works/spectraxe/state-loading.png";
+import StateError from "../assets/images/works/spectraxe/state-error.png";
+import ProblemExplorationFirst from "../assets/images/works/spectraxe/problem-exploration-1.png";
+import ProblemExplorationSecond from "../assets/images/works/spectraxe/problem-exploration-2.png";
 
 import Star from "../components/Star.astro";
 import Book from "../assets/images/works/asset-management-app/book.svg";
@@ -48,7 +57,7 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
   <section class="work__section two-cols">
     <h2 class="heading-l">Process</h2>
 
-    <section class="work-section__step">
+    <section id="problem-exploration" class="work-section__step">
       <h3 class="heading-m">
         <HandStroke number="1" />
         Problem exploration
@@ -61,37 +70,27 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         impacting block trades.
       </p>
 
-      <div
-        class="card card_big-grey gap-y-section-sm md:col-span-2 md:grid md:grid-cols-25 md:gap-y-0 [&_img]:aspect-3/2"
-      >
-        <figure class="relative flex flex-col gap-y-[1em]">
-          <figcaption class="font-bold">Before the redesign</figcaption>
-          <Image
-            class="w-full border border-light/10"
-            src={TutorialsFirst}
-            alt="Table UI with column filtering, resizing, and sorting"
-            widths={[300, 380, 620, 720, 900, TutorialsFirst.width]}
-            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TutorialsFirst.width}px`}
-            decoding="async"
-            loading="lazy"
-          />
-        </figure>
-
-        <figure class="flex flex-col gap-y-[1em]">
-          <figcaption class="font-bold md:self-end">
-            After the redesign
-          </figcaption>
-          <Image
-            class="w-full border border-light/10 z-1"
-            src={TutorialsSecond}
-            alt="Table UI with strategy links and layout settings"
-            widths={[300, 380, 620, 720, 900, TutorialsSecond.width]}
-            sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${TutorialsSecond.width}px`}
-            decoding="async"
-            loading="lazy"
-          />
-        </figure>
-      </div>
+      <figure class="card card_big-grey grid md:col-span-2">
+        <figcaption class="sr-only">Research screenshots</figcaption>
+        <Image
+          class="w-full border border-light/10"
+          src={ProblemExplorationFirst}
+          alt="Table UI with column filtering, resizing, and sorting"
+          widths={[300, 380, 620, 720, 900, ProblemExplorationFirst.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${ProblemExplorationFirst.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          class="w-full border border-light/10 z-1"
+          src={ProblemExplorationSecond}
+          alt="Table UI with strategy links and layout settings"
+          widths={[300, 380, 620, 720, 900, ProblemExplorationSecond.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${ProblemExplorationSecond.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+      </figure>
 
       <p class="mb-[0.875em]">
         From my research, I identified <span class="font-bold"
@@ -188,36 +187,57 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         <HandStroke number="3" />
         Architecture & wireframing
       </h3>
-      <p>
+      <p class="mb-section-sm">
         Next, I designed 2 variants of the system architecture to propose them
         to the team and stakeholders to select the best option together.
       </p>
 
-      <figure class="card card_big-grey gap-[1em] md:grid md:grid-cols-2">
-        <figcaption class="font-bold md:col-span-2">
-          Concepts of the flow's starting points
-        </figcaption>
-        <Image
-          class="w-full"
-          src={StrategyPageAfter}
-          alt="Screenshot of the Strategy page of the Asset management app after redesign"
-          widths={[300, 380, 620, 720, 900, StrategyPageAfter.width]}
-          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageAfter.width}px`}
-          decoding="async"
-          loading="lazy"
-        />
-        <Image
-          class="w-full"
-          src={StrategyPageAfter}
-          alt="Screenshot of the Strategy page of the Asset management app after redesign"
-          widths={[300, 380, 620, 720, 900, StrategyPageAfter.width]}
-          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StrategyPageAfter.width}px`}
-          decoding="async"
-          loading="lazy"
-        />
-      </figure>
+      <div
+        id="concepts"
+        class="card card_big-grey md:col-span-2 [&_figcaption]:text-pink-500 [&_figcaption]:text-sm"
+      >
+        <h3 class="mb-section-xs">Concepts of the flow's starting points</h3>
+        <div class="flex flex-col gap-y-section-sm">
+          <figure class="flex flex-col gap-y-[1em] without-radius">
+            <figcaption class="font-bold">
+              <p>
+                Option 1:<br />Separate entry point available for LPs + new
+                interface for the block trade order entry.
+              </p>
+            </figcaption>
 
-      <p class="mb-[0.875em]">
+            <Image
+              class="w-full"
+              src={StateLoading}
+              alt="Table UI with column filtering, resizing, and sorting"
+              widths={[300, 380, 620, 720, 900, StateLoading.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateLoading.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure class="flex flex-col gap-y-[1em] without-radius">
+            <figcaption class="font-bold">
+              <p>
+                Option 2:<br />Switch mode in the order entry to do to the block
+                trade.
+              </p>
+            </figcaption>
+            <Image
+              class="w-full"
+              src={StateError}
+              alt="Table UI with strategy links and layout settings"
+              widths={[300, 380, 620, 720, 900, StateError.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateError.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </div>
+
+      <p class="mb-[0.875em] mt-section-xs">
         We decided to <span class="font-bold">stick with the first option</span>
         and make the block trade functionality <span class="font-bold"
           >more distinctive</span
@@ -286,10 +306,12 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         <li>technical specifications for developers.</li>
       </ul>
 
-      <figure class="card card_big-grey gap-[1em] md:grid md:grid-cols-2">
+      <figure
+        class="card card_big-grey gap-[1em] md:grid md:grid-cols-2 without-radius"
+      >
         <figcaption class="font-bold md:col-span-2">Specifications</figcaption>
         <Image
-          class="w-full without-radius"
+          class="w-full"
           src={SpecificationsFirst}
           alt="Screenshot of the Strategy page of the Asset management app after redesign"
           widths={[300, 380, 620, 720, 900, SpecificationsFirst.width]}
@@ -298,7 +320,7 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
           loading="lazy"
         />
         <Image
-          class="w-full without-radius"
+          class="w-full"
           src={SpecificationsSecond}
           alt="Screenshot of the Strategy page of the Asset management app after redesign"
           widths={[300, 380, 620, 720, 900, SpecificationsSecond.width]}
@@ -312,42 +334,93 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         The documentation <span class="font-bold">outlined edge cases</span> and
         <span class="font-bold">error-handling mechanisms</span> to ensure robustness.
       </p>
-      <p>
+      <p class="mb-section-sm">
         <span class="font-bold">User testing</span> with a small group of traders
         confirmed that the feature reduced complexity and improved trade predictability.
         Final changes were made based on feedback, ensuring the design met the goal
         of a clear, reliable block trade experience.
       </p>
 
-      <figure>
-        <figcaption>States & details</figcaption>
-        <Image
-          class="max-w-full white-image"
-          src={UserTesting}
-          alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
-          widths={[300, 380, 620, 720, UserTesting.width]}
-          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${UserTesting.width}px`}
-          decoding="async"
-          loading="lazy"
-        />
-      </figure>
+      <div
+        id="states"
+        class="card card_big-grey md:col-span-2 [&_figcaption]:text-pink-500 [&_figcaption]:text-sm"
+      >
+        <h3 class="mb-section-xs">States & details</h3>
+        <div class="flex flex-col gap-y-section-sm">
+          <figure class="flex flex-col gap-y-[1em] without-radius">
+            <figcaption class="font-bold">Loading</figcaption>
+
+            <Image
+              class="w-full"
+              src={StateLoading}
+              alt="Table UI with column filtering, resizing, and sorting"
+              widths={[300, 380, 620, 720, 900, StateLoading.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateLoading.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+
+          <figure
+            id="components"
+            class="flex flex-col gap-y-[1em] without-radius"
+          >
+            <figcaption class="font-bold">Components</figcaption>
+            <div
+              class="grid w-84 max-w-full grid-cols-[minmax(0,1.3fr)minmax(0,1.2fr)minmax(0,1fr)] gap-y-[2svw] sm:w-3/4 lg:flex lg:flex-col lg:h-full lg:gap-0 lg:justify-between lg:w-full"
+            >
+              <Image
+                class="w-full"
+                src={StateComponentFirst}
+                alt="Table UI with strategy links and layout settings"
+                widths={[300, 380, 620, 720, 900, StateComponentFirst.width]}
+                sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateComponentFirst.width}px`}
+                decoding="async"
+                loading="lazy"
+              />
+              <Image
+                class="w-full lg:w-9/10"
+                src={StateComponentSecond}
+                alt="Table UI with strategy links and layout settings"
+                widths={[300, 380, 620, 720, 900, StateComponentSecond.width]}
+                sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateComponentSecond.width}px`}
+                decoding="async"
+                loading="lazy"
+              />
+              <Image
+                class="w-full lg:w-2/3"
+                src={StateComponentThird}
+                alt="Table UI with strategy links and layout settings"
+                widths={[300, 380, 620, 720, 900, StateComponentThird.width]}
+                sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateComponentThird.width}px`}
+                decoding="async"
+                loading="lazy"
+              />
+            </div>
+          </figure>
+          <figure class="flex flex-col gap-y-[1em] without-radius">
+            <figcaption class="font-bold">Error</figcaption>
+            <Image
+              class="w-full"
+              src={StateError}
+              alt="Table UI with strategy links and layout settings"
+              widths={[300, 380, 620, 720, 900, StateError.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateError.width}px`}
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </div>
     </section>
   </section>
 
   <section class="work__section two-cols">
     <h2 class="heading-l">Outcome</h2>
     <p>
-      The implementation of block trade functionality resulted in enhanced
-      efficiency for large-volume transactions, increased platform liquidity,
-      improved user experience, and a strengthened competitive edge in the
-      options trading market.
+      The block trading functionality boosted large-volume transaction
+      efficiency by 20% for over 5% of users, enhancing platform liquidity and
+      strengthening competitive positioning in the options trading market.
     </p>
-
-    <section class="work-section__step">
-      <h3 class="heading-m">Now</h3>
-      <p>
-        We are working on expanding the block trade functionality with swaps.
-      </p>
-    </section>
   </section>
 </Layout>

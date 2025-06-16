@@ -99,7 +99,7 @@
   }
 
   .wrapper {
-    @apply w-full px-svw 2xl:container 2xl:px-[84px];
+    @apply w-full px-svw xl:max-w-[89rem] xl:px-[66px];
   }
 
   .card {
