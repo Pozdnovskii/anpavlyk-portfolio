@@ -33,6 +33,10 @@ import StateLoading from "../assets/images/works/spectraxe/state-loading.png";
 import StateError from "../assets/images/works/spectraxe/state-error.png";
 import ProblemExplorationFirst from "../assets/images/works/spectraxe/problem-exploration-1.png";
 import ProblemExplorationSecond from "../assets/images/works/spectraxe/problem-exploration-2.png";
+import RequirementsFirst from "../assets/images/works/spectraxe/requirements-1.png";
+import RequirementsSecond from "../assets/images/works/spectraxe/requirements-2.png";
+import FlowMob from "../assets/images/works/spectraxe/flow-mob.png";
+import FlowDesk from "../assets/images/works/spectraxe/flow-desk.png";
 
 import Star from "../components/Star.astro";
 import Book from "../assets/images/works/asset-management-app/book.svg";
@@ -134,14 +138,24 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         successful flow:
       </p>
 
-      <figure>
+      <figure class="grid gap-svw sm:grid-cols-[.75fr_1fr] without-radius">
+        <!-- Change figcaption -->
         <figcaption class="sr-only">Scenario for User testing</figcaption>
         <Image
-          class="max-w-full white-image"
-          src={UserTesting}
+          class=""
+          src={RequirementsFirst}
           alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
-          widths={[300, 380, 620, 720, UserTesting.width]}
-          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${UserTesting.width}px`}
+          widths={[300, 380, 620, 720, RequirementsFirst.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${RequirementsFirst.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          class=""
+          src={RequirementsSecond}
+          alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
+          widths={[300, 380, 620, 720, RequirementsSecond.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${RequirementsSecond.width}px`}
           decoding="async"
           loading="lazy"
         />
@@ -270,14 +284,23 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         to create an intuitive experience for traders.
       </p>
 
-      <figure>
-        <figcaption>Flow</figcaption>
+      <figure class="card card_big-grey gap-[1em] without-radius">
+        <figcaption class="font-bold">Flow</figcaption>
         <Image
-          class="max-w-full white-image"
-          src={UserTesting}
+          class="lg:hidden"
+          src={FlowMob}
           alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
-          widths={[300, 380, 620, 720, UserTesting.width]}
-          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${UserTesting.width}px`}
+          widths={[300, 380, 620, 720, FlowMob.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${FlowMob.width}px`}
+          decoding="async"
+          loading="lazy"
+        />
+        <Image
+          class="hidden lg:block"
+          src={FlowDesk}
+          alt="Table outlining a user testing scenario for filtering and exploring a strategy. Includes specific questions about table usage and layout, and end questions for user feedback."
+          widths={[300, 380, 620, 720, FlowDesk.width]}
+          sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, ${FlowDesk.width}px`}
           decoding="async"
           loading="lazy"
         />
@@ -367,7 +390,7 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
           >
             <figcaption class="font-bold">Components</figcaption>
             <div
-              class="grid w-84 max-w-full grid-cols-[minmax(0,1.3fr)minmax(0,1.2fr)minmax(0,1fr)] gap-y-[2svw] sm:w-3/4 lg:flex lg:flex-col lg:h-full lg:gap-0 lg:justify-between lg:w-full"
+              class="grid w-84 max-w-full grid-cols-[minmax(0,1.3fr)minmax(0,1.2fr)minmax(0,1fr)] gap-x-[2svw] sm:w-3/4 lg:flex lg:flex-col lg:h-full lg:gap-y-2.5 lg:justify-between lg:w-full"
             >
               <Image
                 class="w-full"
