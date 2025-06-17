@@ -7,23 +7,6 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/HeroWorkPage.astro";
 import HandStroke from "../components/HandStroke.astro";
 
-import TablePageBefore from "../assets/images/works/asset-management-app/table-page-before.png";
-import TablePageAfter from "../assets/images/works/asset-management-app/table-page-after.png";
-import StrategyPageAfter from "../assets/images/works/asset-management-app/strategy-page-after.png";
-import StrategyPageBeforeFirst from "../assets/images/works/asset-management-app/strategy-page-before-1.png";
-import StrategyPageBeforeSecond from "../assets/images/works/asset-management-app/strategy-page-before-2.png";
-import StrategyPageBeforeThird from "../assets/images/works/asset-management-app/strategy-page-before-3.png";
-import UserTesting from "../assets/images/works/asset-management-app/user-testing.png";
-import UserFeedback from "../assets/images/works/asset-management-app/user-feedback.png";
-import InterviewQuestions from "../assets/images/works/asset-management-app/interview-questions.png";
-import ConceptFirst from "../assets/images/works/asset-management-app/concept-1.png";
-import ConceptSecond from "../assets/images/works/asset-management-app/concept-2.png";
-import ConceptThird from "../assets/images/works/asset-management-app/concept-3.png";
-import TutorialsFirst from "../assets/images/works/asset-management-app/tutorials-1.png";
-import TutorialsSecond from "../assets/images/works/asset-management-app/tutorials-2.png";
-import MetricBefore from "../assets/images/works/asset-management-app/metric-before.png";
-import MetricAfter from "../assets/images/works/asset-management-app/metric-after.png";
-
 import SpecificationsFirst from "../assets/images/works/spectraxe/specifications-1.png";
 import SpecificationsSecond from "../assets/images/works/spectraxe/specifications-2.png";
 import StateComponentFirst from "../assets/images/works/spectraxe/state-component-1.png";
@@ -37,10 +20,12 @@ import RequirementsFirst from "../assets/images/works/spectraxe/requirements-1.p
 import RequirementsSecond from "../assets/images/works/spectraxe/requirements-2.png";
 import FlowMob from "../assets/images/works/spectraxe/flow-mob.png";
 import FlowDesk from "../assets/images/works/spectraxe/flow-desk.png";
+import ConceptFirst from "../assets/images/works/spectraxe/concept-1.png";
+import ConceptSecond from "../assets/images/works/spectraxe/concept-2.png";
 
 import Star from "../components/Star.astro";
-import Book from "../assets/images/works/asset-management-app/book.svg";
-import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
+import Book from "../assets/images/works/spectraxe/book.svg";
+import Nastya from "../assets/images/works/spectraxe/nastya.svg";
 ---
 
 <Layout
@@ -49,7 +34,7 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
 >
   <Hero
     title="Introducing the block trade functionality"
-    description="The feature streamlined large-volume transactions and boosted the option trading platform."
+    description="The feature increased efficiency of large-volume transactions by 20% for over 5% of users."
     client="Spectraxe"
     role="UX/UI designer"
     duration="Mar 2025 — present time"
@@ -210,7 +195,7 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         id="concepts"
         class="card card_big-grey md:col-span-2 [&_figcaption]:text-pink-500 [&_figcaption]:text-sm"
       >
-        <h3 class="mb-section-xs">Concepts of the flow's starting points</h3>
+        <h3 class="mb-[1em]">Concepts of the flow's starting points</h3>
         <div class="flex flex-col gap-y-section-sm">
           <figure class="flex flex-col gap-y-[1em] without-radius">
             <figcaption class="font-bold">
@@ -222,17 +207,17 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
 
             <Image
               class="w-full"
-              src={StateLoading}
+              src={ConceptFirst}
               alt="Table UI with column filtering, resizing, and sorting"
-              widths={[300, 380, 620, 720, 900, StateLoading.width]}
-              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateLoading.width}px`}
+              widths={[300, 380, 620, 720, 900, ConceptFirst.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${ConceptFirst.width}px`}
               decoding="async"
               loading="lazy"
             />
           </figure>
 
           <figure class="flex flex-col gap-y-[1em] without-radius">
-            <figcaption class="font-bold">
+            <figcaption class="font-bold ps-[5.6%]">
               <p>
                 Option 2:<br />Switch mode in the order entry to do to the block
                 trade.
@@ -240,10 +225,10 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
             </figcaption>
             <Image
               class="w-full"
-              src={StateError}
+              src={ConceptSecond}
               alt="Table UI with strategy links and layout settings"
-              widths={[300, 380, 620, 720, 900, StateError.width]}
-              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${StateError.width}px`}
+              widths={[300, 380, 620, 720, 900, ConceptSecond.width]}
+              sizes={`(max-width: 360px) 300px, (max-width: 450px) 380px, (max-width: 768px) 620px, (max-width: 1024px) 720px, (max-width: 1280px) 900px, ${ConceptSecond.width}px`}
               decoding="async"
               loading="lazy"
             />
@@ -368,7 +353,7 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
         id="states"
         class="card card_big-grey md:col-span-2 [&_figcaption]:text-pink-500 [&_figcaption]:text-sm"
       >
-        <h3 class="mb-section-xs">States & details</h3>
+        <h3 class="mb-[1em]">States & details</h3>
         <div class="flex flex-col gap-y-section-sm">
           <figure class="flex flex-col gap-y-[1em] without-radius">
             <figcaption class="font-bold">Loading</figcaption>
@@ -441,9 +426,9 @@ import Nastya from "../assets/images/works/asset-management-app/nastya.svg";
   <section class="work__section two-cols">
     <h2 class="heading-l">Outcome</h2>
     <p>
-      The block trading functionality boosted large-volume transaction
-      efficiency by 20% for over 5% of users, enhancing platform liquidity and
-      strengthening competitive positioning in the options trading market.
+      The block trading feature increased efficiency of large-volume
+      transactions by 20% for over 5% of users, improved platform liquidity and
+      strengthened competitive positioning in the options trading market.
     </p>
   </section>
 </Layout>

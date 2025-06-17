@@ -83,7 +83,7 @@ figure:not(.without-radius) img {
 }
 
 @media (width >= 27rem) {
-  :is(#concepts, #states) > div {
+  #states > div {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -95,14 +95,6 @@ figure:not(.without-radius) img {
 
   #components {
     grid-column: 1 / -1;
-  }
-
-  #concepts > div {
-    column-gap: calc(var(--spacing-svw) * 0.75);
-  }
-
-  #concepts figure {
-    justify-content: space-between;
   }
 }
 
@@ -134,9 +126,19 @@ figure:not(.without-radius) img {
   }
 
   #concepts > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 63rem;
     max-width: 100%;
     margin-inline: auto;
+  }
+
+  #concepts > div {
+    column-gap: calc(var(--spacing-svw) * 0.75);
+  }
+
+  #concepts figure {
+    justify-content: space-between;
   }
 
   #problem-exploration img:first-of-type {

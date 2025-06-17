@@ -31,7 +31,7 @@ const isHomePage = Astro.url.pathname === "/";
   <body class="antialiased md:text-[1.125rem] lg:text-[1.25em] xl:text-[1.5em]">
     <header
       id="header"
-      class="wrapper text-em-sm flex justify-between items-center gap-4 sticky top-0 bg-secondary z-6 py-3 after:absolute after:inset-x-0 after:top-0 after:h-full after:bg-secondary after:border-b after:border-grey lg:after:hidden"
+      class="wrapper text-em-sm flex justify-between items-center gap-4 sticky top-0 bg-secondary z-6 py-3 after:absolute after:inset-x-0 after:top-0 after:h-full after:bg-secondary after:border-b after:border-grey md:after:hidden"
     >
       <a href="/" aria-label="Home Page" class="z-1"
         ><span aria-hidden="true">Anastasiya Pavlyk</span></a
@@ -41,7 +41,7 @@ const isHomePage = Astro.url.pathname === "/";
         aria-label="Toggle menu"
         aria-controls="mobile-menu"
         aria-expanded="false"
-        class="relative z-1 ps-[12px] cursor-pointer aria-expanded:[&+nav]:opacity-100 aria-expanded:[&+nav]:translate-y-0 aria-expanded:[&+nav_li]:-translate-x-[1em] aria-expanded:[&+nav_li]:opacity-100 aria-expanded:[&+nav>a]:opacity-100 lg:hidden"
+        class="relative z-1 ps-[12px] cursor-pointer aria-expanded:[&+nav]:opacity-100 aria-expanded:[&+nav]:translate-y-0 aria-expanded:[&+nav_li]:-translate-x-[1em] aria-expanded:[&+nav_li]:opacity-100 aria-expanded:[&+nav>a]:opacity-100 md:hidden"
       >
         <svg
           width="45"
@@ -69,24 +69,31 @@ const isHomePage = Astro.url.pathname === "/";
       </button>
       <nav
         id="mobile-menu"
-        class="absolute top-0 left-0 wrapper min-h-svh items-start justify-between pb-6 lg:pb-0 lg:w-auto lg:min-h-auto bg-secondary hidden flex-col gap-[1em] opacity-0 -translate-y-full transition ease-in-out duration-200 **:duration-200 lg:static lg:contents"
+        class="absolute top-0 left-0 wrapper min-h-svh items-start justify-between pb-6 md:pb-0 md:w-auto md:min-h-auto bg-secondary hidden flex-col gap-[1em] opacity-0 -translate-y-full transition ease-in-out duration-200 **:duration-200 md:static md:contents"
         aria-label="Primary"
       >
         <ul
-          class="flex flex-col gap-[1em] leading-none pt-[calc(--spacing(9)+45px)] lg:pt-0 *:flex *:opacity-0 *:translate-x-[6em] *:transition lg:*:translate-x-0 lg:*:opacity-100 [&_a]:px-[1em] [&_a]:py-[.66em] [&_a]:rounded-full [&_a]:hover:bg-accent [&_a]:transition-colors lg:flex-row"
+          class="flex relative flex-col gap-[1em] leading-none pt-[calc(--spacing(9)+45px)] md:pt-0 *:flex *:opacity-0 *:translate-x-[6em] *:transition md:*:translate-x-0 md:*:opacity-100 [&_a]:px-[1em] [&_a]:py-[.66em] [&_a]:rounded-full [&_a]:hover:bg-accent [&_a]:transition-colors md:flex-row"
         >
           <li class="delay-250">
-            <a href="/#work">Work</a>
+            <a class="scroll-link" href="/#work">Work</a>
           </li>
-          <li class="delay-350"><a href="/#about">About</a></li>
+          <li class="delay-350">
+            <a class="scroll-link" href="/#about">About</a>
+          </li>
           <li class="delay-450">
-            <a href="/#articles">Talks&Articles</a>
+            <a class="scroll-link" href="/#articles">Talks&Articles</a>
           </li>
+          <div
+            aria-hidden="true"
+            class="indicator absolute bottom-0 h-[2px] bg-orange-500 transition-all duration-300 ease-in-out"
+          >
+          </div>
         </ul>
         <a
           href="https://www.linkedin.com/in/anastasiya-pavlyk/"
           target="_blank"
-          class="flex flex-row-reverse items-center gap-x-[.5em] ps-[1em] opacity-0 transition delay-120 lg:opacity-100 lg:ps-0 hover:[&_span]:underline hover:[&_span]:text-blue-700"
+          class="flex flex-row-reverse items-center gap-x-[.5em] ps-[1em] opacity-0 transition delay-120 md:opacity-100 md:ps-0 hover:[&_span]:underline hover:[&_span]:text-blue-700"
         >
           <span>Let's connect</span>
           <Linkedin
@@ -146,22 +153,7 @@ const isHomePage = Astro.url.pathname === "/";
   </body>
 </html>
 
-<!-- <script >
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("header-btn");
-    const menu = document.getElementById("mobile-menu");
-
-    if (toggleButton && menu) {
-      const toggleMenu = () => {
-        const isHidden = menu.classList.toggle("hidden");
-        toggleButton.setAttribute("aria-expanded", !isHidden);
-        menu.setAttribute("data-open", !isHidden);
-      };
-
-      toggleButton.addEventListener("click", toggleMenu);
-    }
-  });
-</script> -->
+<!-- <script type="module" src="../src/scripts/scroll-menu.js"></script> -->
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
