@@ -146,14 +146,12 @@ const isHomePage = Astro.url.pathname === "/";
         >
       </p>
     </footer>
+    <script type="module" src="../src/scripts/mobile-menu.js"></script>
   </body>
 </html>
 
-<!-- <script type="module" src="../src/scripts/scroll-menu.js"></script> -->
-
-<script type="module">
+<!-- <script type="module">
   if (window.matchMedia("(max-width: 47.999rem)").matches) {
-    console.log("asdas");
     import("../src/scripts/mobile-menu.js");
   }
-</script>
+</script> -->
