@@ -76,6 +76,36 @@
   img {
     object-fit: cover;
   }
+
+  @media (width >= 48rem) {
+    #header-ul {
+      --indicator-x: 0;
+      --indicator-width: 18%;
+      --indicator-opacity: 0;
+    }
+
+    #header-ul::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: var(--indicator-width);
+      background-color: var(--color-light);
+      border-radius: 3em;
+      transform: translateX(var(--indicator-x));
+      opacity: var(--indicator-opacity);
+      z-index: -1;
+      transition: all 0.3s ease;
+    }
+
+    .active {
+      color: var(--color-accent);
+    }
+
+    .active:hover {
+      color: var(--color-primary);
+    }
+  }
 }
 
 @layer components {
@@ -145,8 +175,4 @@
     left: -0.33ch;
     right: 0;
   }
-}
-
-nav .scroll-link.active {
-  color: #ff6600;
 }

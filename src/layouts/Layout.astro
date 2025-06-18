@@ -73,6 +73,7 @@ const isHomePage = Astro.url.pathname === "/";
         aria-label="Primary"
       >
         <ul
+          id="header-ul"
           class="flex relative flex-col gap-[1em] leading-none pt-[calc(--spacing(9)+45px)] md:pt-0 *:flex *:opacity-0 *:translate-x-[6em] *:transition md:*:translate-x-0 md:*:opacity-100 [&_a]:px-[1em] [&_a]:py-[.66em] [&_a]:rounded-full [&_a]:hover:bg-accent [&_a]:transition-colors md:flex-row"
         >
           <li class="delay-250">
@@ -84,11 +85,6 @@ const isHomePage = Astro.url.pathname === "/";
           <li class="delay-450">
             <a class="scroll-link" href="/#articles">Talks&Articles</a>
           </li>
-          <div
-            aria-hidden="true"
-            class="indicator absolute bottom-0 h-[2px] bg-orange-500 transition-all duration-300 ease-in-out"
-          >
-          </div>
         </ul>
         <a
           href="https://www.linkedin.com/in/anastasiya-pavlyk/"
@@ -155,52 +151,9 @@ const isHomePage = Astro.url.pathname === "/";
 
 <!-- <script type="module" src="../src/scripts/scroll-menu.js"></script> -->
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("header-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const menuLinks = mobileMenu.querySelectorAll("a");
-
-    const openMenu = () => {
-      mobileMenu.style.display = "flex";
-      document.body.style.overflowY = "hidden";
-
-      requestAnimationFrame(() => {
-        toggleButton.setAttribute("aria-expanded", "true");
-      });
-    };
-
-    const closeMenu = () => {
-      mobileMenu.classList.remove("mob-menu_active");
-      toggleButton.setAttribute("aria-expanded", "false");
-      document.body.style.overflowY = "";
-
-      setTimeout(() => {
-        mobileMenu.style.display = "none";
-      }, 250);
-    };
-
-    toggleButton.addEventListener("click", () => {
-      const isOpen = toggleButton.getAttribute("aria-expanded") === "true";
-      isOpen ? closeMenu() : openMenu();
-    });
-
-    menuLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth < 768) {
-          closeMenu();
-        }
-
-        setTimeout(() => {
-          history.replaceState(null, "", window.location.pathname);
-        }, 10);
-      });
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768 && mobileMenu.style.display === "none") {
-        openMenu();
-      }
-    });
-  });
+<script type="module">
+  if (window.matchMedia("(max-width: 47.999rem)").matches) {
+    console.log("asdas");
+    import("../src/scripts/mobile-menu.js");
+  }
 </script>
