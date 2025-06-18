@@ -146,3 +146,4 @@ document.addEventListener("DOMContentLoaded", () => {
 //   navList.style.setProperty("--indicator-width", "0px");
 //   navList.style.setProperty("--indicator-x", "0px");
 // }
+export {};
