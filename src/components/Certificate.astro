@@ -16,11 +16,7 @@ const Icon =
   <span>{data.organization} '{data.year}</span>
   <Image
     src={Icon}
-    width={Icon.width / 2}
-    densities={[1.5, 2]}
     alt={`Logo of ${data.organization}`}
-    decoding="async"
-    loading="lazy"
-    class="order-first row-span-2 self-center w-10 max-w-[40px] aspect-square"
+    class="order-first row-span-2 self-center w-10 max-w-[40px]"
   />
 </li>

@@ -40,6 +40,10 @@ figure + p {
   }
 }
 
+#tutorials img {
+  max-width: min(50%, 350px);
+}
+
 #outcome h3 {
   margin-bottom: 0.5rem;
 }
