@@ -112,9 +112,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       class="wrapper grid grid-cols-2 sm:grid-cols-3 items-center gap-4 text-em-sm pb-4"
     >
       <a
+        id="goUpIcon"
         href="#main"
         class="order-3 justify-self-end sm:justify-self-center font-semibold"
-        ><svg
+      >
+        <svg
           class="inline aspect-[5/4] me-[.66em]"
           style="height: min(1.2em, 24px)"
           aria-hidden="true"
@@ -123,8 +125,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            d="M27.4491 25C27.1523 4.3577 1 6.59398 1 14.5651C1 25 27.4491 17.2513 27.4491 1M27.4491 1L23.5313 4.3577M27.4491 1L31 3.68623"
-            class="stroke-current stroke-2"
+            d="M27.4491 25C27.1523 4.3577 1 6.59398 1 14.5651C1 25 27.4491 17.2513 27.4491 1"
+            stroke="#030500"
+            stroke-width="1.5"
+            stroke-linecap="round"></path>
+          <path
+            d="M23.5312 4.3577L27.4491 1L31 3.68623"
+            stroke="#030500"
+            stroke-width="1.5"
             stroke-linecap="round"></path>
         </svg>Go up</a
       >
@@ -149,6 +157,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </footer>
     <script>
       import("../scripts/mobile-menu.js");
+    </script>
+    <script>
+      import("../scripts/goUpAnimation");
     </script>
   </body>
 </html>
