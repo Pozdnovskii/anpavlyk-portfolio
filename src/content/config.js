@@ -15,6 +15,14 @@ const works = defineCollection({
     }),
 });
 
+const testimonials = defineCollection({
+  schema: z.object({
+    author: z.string(),
+    role: z.string(),
+    order: z.number().optional(),
+  }),
+});
+
 // const works = defineCollection({
 //   loader: glob({ pattern: "*.md", base: "src/content/works" }),
 
@@ -28,4 +36,4 @@ const works = defineCollection({
 //     }),
 // });
 
-export const collections = { works };
+export const collections = { works, testimonials };

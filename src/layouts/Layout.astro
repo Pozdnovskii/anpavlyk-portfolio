@@ -1,5 +1,6 @@
 ---
 const { title, description } = Astro.props;
+import { ClientRouter } from "astro:transitions";
 
 import "../styles/global.css";
 import Linkedin from "../assets/images/svg/linkedin.svg";
@@ -28,6 +29,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="view-transition" content="same-origin" />
+    <ClientRouter />
   </head>
   <body class="antialiased md:text-[1.125rem] lg:text-[1.25em] xl:text-[1.5em]">
     <header
@@ -85,6 +87,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           </li>
           <li class="delay-450">
             <a class="scroll-link" href="/#articles">Talks&Articles</a>
+          </li>
+          <li class="delay-550">
+            <a class="scroll-link" href="/#testimonials">Testimonials</a>
           </li>
         </ul>
         <a
@@ -156,7 +161,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </p>
     </footer>
     <script>
-      import("../scripts/mobile-menu.js");
+      import("../scripts/mobile-menu");
     </script>
     <script>
       import("../scripts/goUpAnimation");

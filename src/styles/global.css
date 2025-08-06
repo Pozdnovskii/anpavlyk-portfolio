@@ -175,4 +175,32 @@
     left: -0.33ch;
     right: 0;
   }
+
+  .testimonial-card {
+    @apply rounded-xl;
+  }
+
+  .testimonial-card:not(:first-of-type) {
+    @apply bg-grey;
+  }
+
+  .testimonial-card:first-of-type {
+    @apply bg-accent;
+  }
+
+  .testimonial-card blockquote {
+    @apply mb-14;
+  }
+
+  .testimonial-card p:not(:last-child) {
+    @apply mb-4;
+  }
+
+  #testimonial-2 p:nth-child(n + 3) {
+    display: none;
+  }
+
+  #testimonial-2.expanded p:nth-child(n + 3) {
+    display: block;
+  }
 }

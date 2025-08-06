@@ -11,8 +11,10 @@ import Portrait from "../assets/images/svg/portrait.svg";
 import Blob from "../assets/images/svg/blob.svg";
 import Crown from "../assets/images/svg/crown.svg";
 import Rhomb from "../assets/images/svg/rhomb.svg";
+import About from "../assets/images/svg/about.svg";
 
 import { YouTube } from "@astro-community/astro-embed-youtube";
+import TestimonialsList from "../components/TestimonialsList.astro";
 
 const works = await getCollection("works");
 ---
@@ -67,8 +69,9 @@ const works = await getCollection("works");
     </h1>
 
     <p class="mb-4 text-light z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
-      I'm an interface designer with over 4 years of experience, specializing in
-      creating user-friendly financial interfaces for web and mobile.
+      With over 4&nbsp;years of experience, I&nbsp;combine thoughtful design
+      with fintech knowledge to&nbsp;turn complex requirements into clear,
+      intuitive interfaces.
       <Crown
         aria-hidden="true"
         width="56px"
@@ -77,9 +80,9 @@ const works = await getCollection("works");
       />
     </p>
     <p class="text-light z-1 relative md:w-[min(30em,_72%)] md:ms-auto">
-      I'm dedicated to creating technology accessible to everyone and I enjoy
-      helping design teams grow by mentoring junior designers and sharing my
-      knowledge.
+      I'm dedicated to creating technology accessible to everyone and
+      I&nbsp;enjoy helping design teams grow by mentoring junior designers and
+      sharing my knowledge.
     </p>
   </section>
 
@@ -90,22 +93,32 @@ const works = await getCollection("works");
     </ul>
   </section>
 
-  <section id="about">
+  <section id="about" class="relative">
     <h2 class="heading-m">About</h2>
     <div class="grid gap-7.5 sm:grid-cols-2 md:gap-10">
-      <p class="col-span-full w-[min(30em,_100%)] text-pretty">
-        I am a designer who puts <span
-          id="text-underline"
-          class="relative inline-block"
-        >
-          people&nbsp;first&nbsp;</span
-        >— whether they are end-users or team members. My approach combines
-        empathy with an iterative design process to create thoughtful and
-        enjoyable user experiences. Collaborating closely with business
-        analysts, developers, and QA teams, I foster a creative environment that
-        leverages diverse insights. This teamwork results in innovative
-        solutions that align with both user needs and business objectives.
-      </p>
+      <div class="col-span-full [&>p]:w-[min(30em,_100%)] text-pretty relative">
+        <p class="mb-4">
+          I am a designer who puts <span
+            id="text-underline"
+            class="relative inline-block"
+          >
+            people&nbsp;first&nbsp;</span
+          >&mdash; whether they are end-users or team members. My&nbsp;approach
+          combines empathy with an iterative design process to create thoughtful
+          and enjoyable user experiences.
+        </p>
+        <p>
+          Collaborating closely with business analysts, developers, and QA
+          teams, I&nbsp;foster a creative environment that leverages diverse
+          insights. This teamwork results in innovative solutions that align
+          with both user needs and business objectives.
+        </p>
+        <About
+          aria-hidden="true"
+          stroke="currentColor"
+          class="hidden md:h-[132%] md:absolute md:block end-0 bottom-0"
+        />
+      </div>
       <article class="relative bg-accent card rounded-xl">
         <h3 class="heading-s mb-10">Design process</h3>
         <p>
@@ -184,7 +197,17 @@ const works = await getCollection("works");
     </ul>
   </section>
 
+  <section id="testimonials">
+    <h2 class="heading-m">Testimonials</h2>
+    <!-- <ul class="grid gap-7.5 md:grid-cols-2"></ul> -->
+    <TestimonialsList />
+  </section>
+
   <script>
-    import("../scripts/scroll-menu.js");
+    import("../scripts/scroll-menu");
+  </script>
+
+  <script>
+    import("../scripts/full-testimonial");
   </script>
 </Layout>

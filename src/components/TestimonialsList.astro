@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+
+const testimonials = await getCollection("testimonials");
+import TestimonialCard from "../components/TestimonialCard.astro";
+
+testimonials.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+---
+
+<ul
+  class="flex gap-x-4 md:gap-x-7.5 items-start snap-x snap-proximity w-full overflow-x-auto"
+>
+  {
+    testimonials.map((testimonial) => (
+      <TestimonialCard testimonial={testimonial} />
+    ))
+  }
+</ul>

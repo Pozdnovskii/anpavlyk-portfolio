@@ -1,0 +1,30 @@
+---
+const { testimonial } = Astro.props;
+const { Content } = await testimonial.render();
+const { author, role, order } = testimonial.data;
+---
+
+<li
+  class="testimonial-card card w-[clamp(42svw,30em,78svw)] snap-start shrink-0"
+  id={`testimonial-${order}`}
+>
+  <blockquote>
+    <Content />
+    {
+      order === 2 && (
+        <button
+          id="show-more-btn"
+          class="cursor-pointer underline hover:text-blue-600"
+          aria-expanded="false"
+          aria-controls="testimonial-2"
+        >
+          Show more
+        </button>
+      )
+    }
+  </blockquote>
+  <footer class="font-bold *:block">
+    <span class="reviewer-name">{author}</span>
+    <span class="reviewer-role">{role}</span>
+  </footer>
+</li>
