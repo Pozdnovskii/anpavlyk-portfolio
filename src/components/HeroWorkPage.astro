@@ -56,13 +56,13 @@ const {
       </p>
     </div>
 
-    <div>
+    <section>
       <h3 class="heading-s mb-[.75em]">Goal</h3>
-      <span>{goal} </span>
-    </div>
-    <div>
+      <p>{goal}</p>
+    </section>
+    <section class="[&_span]:font-bold">
       <h3 class="heading-s mb-[.75em]">Outcome</h3>
-      <span>{outcome}</span>
-    </div>
+      <p set:html={outcome} />
+    </section>
   </section>
 </div>
