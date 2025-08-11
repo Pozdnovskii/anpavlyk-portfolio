@@ -36,7 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       id="header"
       class="wrapper text-em-sm flex justify-between items-center gap-4 sticky top-0 bg-secondary z-6 py-3 after:absolute after:inset-x-0 after:top-0 after:h-full after:bg-secondary after:border-b after:border-grey md:after:hidden"
     >
-      <a href="/" aria-label="Home Page" class="z-1"
+      <a href="/" aria-label="Home Page" class="z-1 text-nowrap"
         ><span aria-hidden="true">Anastasiya Pavlyk</span></a
       >
       <button
@@ -95,7 +95,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <a
           href="https://www.linkedin.com/in/anastasiya-pavlyk/"
           target="_blank"
-          class="flex flex-row-reverse items-center gap-x-[.5em] ps-[1em] opacity-0 transition delay-120 md:opacity-100 md:ps-0 hover:[&_span]:underline hover:[&_span]:text-blue-700"
+          class="flex flex-row-reverse items-center gap-x-[.5em] ps-[1em] text-nowrap opacity-0 transition delay-120 md:opacity-100 md:ps-0 hover:[&_span]:underline hover:[&_span]:text-blue-700"
         >
           <span>Let's connect</span>
           <Linkedin
