@@ -1,0 +1,326 @@
+---
+import { Image } from "astro:assets";
+
+import "../styles/work.css";
+
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/HeroWorkPage.astro";
+import HandStroke from "../components/HandStroke.astro";
+
+import DesktopVersion from "../assets/images/works/mobile-trading-platform/desktop.webp";
+import PortfolioPageConceptFirst from "../assets/images/works/mobile-trading-platform/portfolio-page-concept-1.webp";
+import PortfolioPageConceptSecond from "../assets/images/works/mobile-trading-platform/portfolio-page-concept-2.webp";
+import PortfolioPageConceptThird from "../assets/images/works/mobile-trading-platform/portfolio-page-concept-3.webp";
+import PortfolioPageConceptFourth from "../assets/images/works/mobile-trading-platform/portfolio-page-concept-4.webp";
+import MainAppSectionFirst from "../assets/images/works/mobile-trading-platform/main-app-section-1.webp";
+import MainAppSectionSecond from "../assets/images/works/mobile-trading-platform/main-app-section-2.webp";
+import MainAppSectionThird from "../assets/images/works/mobile-trading-platform/main-app-section-3.webp";
+import IPadFirst from "../assets/images/works/mobile-trading-platform/ipad-1.webp";
+import IPadSecond from "../assets/images/works/mobile-trading-platform/ipad-2.webp";
+import EntryVariationSimple from "../assets/images/works/mobile-trading-platform/entry-variation-simple.webp";
+import EntryVariationAdvance from "../assets/images/works/mobile-trading-platform/entry-variation-advance.webp";
+import ArchitectureMob from "../assets/images/works/mobile-trading-platform/architecture-mob.webp";
+import ArchitectureDesk from "../assets/images/works/mobile-trading-platform/architecture-desk.webp";
+import FilterSpecificationMob from "../assets/images/works/mobile-trading-platform/filter-specification-mob.webp";
+import FilterSpecificationDesk from "../assets/images/works/mobile-trading-platform/filter-specification-desk.webp";
+import ProjectOverviewMob from "../assets/images/works/mobile-trading-platform/project-overview-mob.webp";
+import ProjectOverviewDesk from "../assets/images/works/mobile-trading-platform/project-overview-desk.webp";
+
+import Cyclone from "../components/Cyclone.astro";
+import NotNastya from "../assets/images/works/mobile-trading-platform/not-nastya.svg";
+import Robot from "../assets/images/works/mobile-trading-platform/robot.svg";
+---
+
+<Layout
+  title="Transforming a desktop trading platform into a mobile-first experience"
+  description="Case Study: Transform a trading platform into a mobile-first experience that balances the needs of casual investors with professional features for large-volume trades."
+>
+  <Hero
+    title="Designing a mobile trading web app"
+    description="Launched to friends and family after 8 months, now evolving through feedback, and a light theme is in progress."
+    role="UX/UI designer"
+    duration="Jan 2025 — present time"
+    goal="Design a mobile trading web application that's easy for casual investors, yet powerful enough for professionals, seamlessly integrate it into the bank's ecosystem."
+    outcome="The project went from draft to a friends & family release in 8 months. The final product introduced two modes for different types of investors and became a fully integrated part of the bank's mobile app."
+    Icon={Cyclone}
+  />
+
+  <section class="work__section two-cols">
+    <h2 class="heading-l">Process</h2>
+
+    <section class="work-section__step">
+      <h3 class="heading-m mb-xxs">
+        <HandStroke number="1" />
+        <span class="inline-block">Identifying core flows</span>
+      </h3>
+      <p>
+        Starting with the bank's existing <span class="font-bold"
+          >desktop application as the foundation,</span
+        > I mapped out <span class="font-bold"
+          >the information architecture</span
+        > and identified which elements needed to be streamlined for mobile.
+      </p>
+
+      <figure class="card card_big-grey gap-y-6 md:gap-y-8">
+        <figcaption class="font-bold">Desktop version</figcaption>
+        <Image
+          src={DesktopVersion}
+          alt="Screenshot of the desktop version of the trading platform"
+        />
+      </figure>
+
+      <p>
+        I designed <span class="font-bold">adaptive navigation patterns</span> that
+        support both quick and simplified flows.
+      </p>
+
+      <figure class="card card_big-grey gap-y-6 md:gap-y-8 mb-section-xs">
+        <figcaption class="font-bold">Information architecture</figcaption>
+        <Image
+          src={ArchitectureDesk}
+          alt="Screenshot of the Information architecture"
+          class="hidden lg:block"
+        />
+        <Image
+          src={ArchitectureMob}
+          alt="Screenshot of the Information architecture"
+          class="lg:hidden"
+          layout="full-width"
+        />
+      </figure>
+
+      <section>
+        <h4 class="heading-s mb-[0.875em]">Challenges:</h4>
+        <ol class="list-decimal list">
+          <li>
+            Translate complex trading workflows into an <span class="font-bold"
+              >intuitive mobile</span
+            >
+            experience.
+          </li>
+          <li>
+            Provide two distinct modes: a simplified flow for casual investors
+            and a <span class="font-bold">professional mode</span> for experienced
+            traders.
+          </li>
+          <li>
+            Ensure <span class="font-bold">consistency with the desktop</span> product
+            while optimizing for mobile usage patterns.
+          </li>
+        </ol>
+        <NotNastya
+          aria-hidden="true"
+          class="hidden md:block md:row-start-1 md:row-end-3 md:self-center"
+        />
+      </section>
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m mb-xxs">
+        <HandStroke number="2" />
+        <span class="inline-block">Ideation & style definition</span>
+      </h3>
+      <p>
+        I began by exploring different approaches to navigation and layouts. I
+        used the bank's existing branding materials to create a familiar and
+        comfortable experience for users.
+      </p>
+
+      <figure class="card card_big-grey gap-y-6 md:gap-y-8">
+        <figcaption class="font-bold col-span-full">
+          Concepts of the portfolio page
+        </figcaption>
+        <div
+          class="grid grid-cols-2 gap-[clamp(12px,3.3svw,36px)] md:grid-cols-4"
+        >
+          <Image
+            src={PortfolioPageConceptFirst}
+            alt="First concept of the portfolio page of the mobile trading platform"
+          />
+          <Image
+            src={PortfolioPageConceptSecond}
+            alt="Second concept of the portfolio page of the mobile trading platform"
+          />
+          <Image
+            src={PortfolioPageConceptThird}
+            alt="Third concept of the portfolio page of the mobile trading platform"
+          />
+          <Image
+            src={PortfolioPageConceptFourth}
+            alt="Fourth concept of the portfolio page of the mobile trading platform"
+          />
+        </div>
+      </figure>
+
+      <p>
+        In collaboration with the client, we defined the style of the main
+        screens to ensure <span class="font-bold">brand alignment</span> and <span
+          class="font-bold">validated usability</span
+        > through interactive prototype testing.
+      </p>
+
+      <figure
+        id="main-app-sections"
+        class="card card_big-grey gap-y-6 md:gap-y-8"
+      >
+        <figcaption class="font-bold">Main app sections</figcaption>
+        <div
+          class="grid gap-[clamp(24px,6svw,40px)] justify-center w-fit mx-auto md:grid-cols-3"
+        >
+          <Image
+            src={MainAppSectionFirst}
+            alt="First screenshot of the mobile trading platform's Main app section"
+            layout="full-width"
+          />
+          <Image
+            src={MainAppSectionSecond}
+            alt="Second screenshot of the mobile trading platform's Main app section"
+            layout="full-width"
+          />
+          <Image
+            src={MainAppSectionThird}
+            alt="Third screenshot of the mobile trading platform's Main app section"
+            layout="full-width"
+          />
+        </div>
+      </figure>
+    </section>
+
+    <section class="work-section__step">
+      <h3 class="heading-m mb-xxs">
+        <HandStroke number="3" />
+        <span class="inline-block">Design handoff</span>
+      </h3>
+      <p class="mb-[0.875em]">
+        To accelerate development, I used <span class="font-bold"
+          >internal design system.</span
+        > During the project, <span class="font-bold"
+          >I expanded and adapted it for mobile needs,</span
+        > including various screen sizes. Besides that, I created customizable components
+        that could be reused across different screens.
+      </p>
+
+      <p>
+        This approach allowed the team to move fast while <span
+          class="font-bold"
+        >
+          keeping the interface consistent and flexible
+        </span> for future iterations.
+      </p>
+
+      <Robot
+        aria-hidden="true"
+        class="hidden md:block md:row-start-1 md:row-end-4 md:self-center md:max-w-[230px]"
+      />
+
+      <figure class="card card_big-grey gap-y-6 md:gap-y-8">
+        <figcaption class="font-bold">Responsive layouts — iPad Pro</figcaption>
+        <div class="grid grid-cols-2 gap-[clamp(12px,3.3svw,36px)]">
+          <Image
+            src={IPadFirst}
+            alt="Screenshot of the table page of the Asset management app before redesign"
+          />
+          <Image
+            src={IPadSecond}
+            alt="Screenshot of the table page of the Asset management app before redesign"
+          />
+        </div>
+      </figure>
+
+      <p>
+        I prepared design documentation with UI mockups, interaction flows, and
+        developer specifications.
+      </p>
+
+      <figure class="card card_big-grey gap-y-6 md:gap-y-8">
+        <figcaption class="font-bold">
+          Filter specification for the orders page
+        </figcaption>
+        <Image
+          src={FilterSpecificationDesk}
+          alt="Screenshot of Filter specification for the orders page"
+          class="hidden lg:block"
+        />
+        <Image
+          src={FilterSpecificationMob}
+          alt="Screenshot of Filter specification for the orders page"
+          class="lg:hidden"
+          layout="full-width"
+        />
+      </figure>
+
+      <p>
+        The full scope of the mobile version was designed, simplifying complex
+        workflows and keeping it consistent with the desktop platform.
+      </p>
+
+      <figure class="card card_big-grey gap-y-6 md:gap-y-8">
+        <figcaption class="font-bold">Project overview</figcaption>
+        <Image
+          src={ProjectOverviewDesk}
+          alt="Screenshot of Project Overview"
+          class="hidden lg:block"
+        />
+        <Image
+          src={ProjectOverviewMob}
+          alt="Screenshot of Project Overview"
+          class="lg:hidden"
+          layout="full-width"
+        />
+      </figure>
+
+      <p>
+        Two tailored modes are available for the Order Entry feature: simplified
+        for casual investors and advanced for professionals. Users can <span
+          class="font-bold"
+        >
+          switch to the advanced mode
+        </span> at any time, accessing the full trading functionality.
+      </p>
+
+      <figure
+        class="card card_big-grey gap-y-6 pb-0 md:gap-y-8"
+        id="entry-variations-figure"
+      >
+        <figcaption class="font-bold">
+          Order entry variations: simple & advanced
+        </figcaption>
+        <div
+          class="grid grid-cols-2 gap-[clamp(12px,3.3svw,36px)] justify-center w-fit mx-auto"
+        >
+          <Image
+            src={EntryVariationSimple}
+            alt="Screenshot of simple order entry variation"
+            layout="full-width"
+          />
+          <Image
+            src={EntryVariationAdvance}
+            alt="Screenshot of advance order entry variation"
+            layout="full-width"
+          />
+        </div>
+      </figure>
+    </section>
+  </section>
+
+  <section id="outcome" class="work__section two-cols">
+    <h2 class="heading-l">Outcome</h2>
+
+    <p class="mb-[0.875em]">
+      The mobile version was designed to be clear on small screens, with
+      touch-friendly interactions and reduced cognitive load, without
+      sacrificing functionality.
+    </p>
+
+    <p class="mb-[0.875em]">
+      8 months into the project, the mobile trading integration was released for
+      friends and family. Early users are providing valuable feedback that is
+      actively collected and analyzed to guide ongoing improvements.
+    </p>
+
+    <p>
+      At the same time, we working on a light theme, giving users more
+      flexibility and enhancing the overall experience.
+    </p>
+  </section>
+</Layout>

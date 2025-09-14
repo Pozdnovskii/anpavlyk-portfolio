@@ -31,7 +31,7 @@ const {
   <section id="intro" class="grid gap-y-[2.5em] md:grid-rows-[min-content_1fr]">
     <h2 class="sr-only">Intro</h2>
     <div
-      class="grid grid-cols-[repeat(auto-fit,_minmax(9em,_1fr))] gap-4 md:grid-cols-1 md:row-span-full"
+      class="grid grid-cols-[repeat(auto-fit,_minmax(9em,_1fr))] auto-rows-min gap-4 md:grid-cols-1 md:row-span-full"
     >
       {
         client && (
@@ -49,7 +49,7 @@ const {
         <h3 class="text-em-sm">Duration</h3>
         <span>{duration}</span>
       </div>
-      <p class="text-em-sm text-light col-span-full">
+      <p class="text-em-sm text-light/80 col-span-full">
         Due to confidentiality agreements, only certain aspects of the redesign
         work can be shared, without revealing specific details about the
         project.
