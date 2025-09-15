@@ -1,40 +1,58 @@
-if (window.matchMedia("(max-width: 47.999rem)").matches) {
-  const toggleButton = document.getElementById("header-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const menuLinks = mobileMenu.querySelectorAll("a");
+function initMobileMenu() {
+  if (window.matchMedia("(max-width: 47.999rem)").matches) {
+    const toggleButton = document.getElementById("header-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-  const openMenu = () => {
-    mobileMenu.style.display = "flex";
-    document.body.style.overflowY = "hidden";
+    if (!toggleButton || !mobileMenu) {
+      return;
+    }
 
-    requestAnimationFrame(() => {
-      toggleButton.setAttribute("aria-expanded", "true");
-    });
-  };
+    if (toggleButton.hasAttribute("aria-expanded")) {
+      return;
+    }
 
-  const closeMenu = () => {
-    mobileMenu.classList.remove("mob-menu_active");
     toggleButton.setAttribute("aria-expanded", "false");
-    document.body.style.overflowY = "";
 
-    setTimeout(() => {
-      mobileMenu.style.display = "none";
-    }, 250);
-  };
+    const menuLinks = mobileMenu.querySelectorAll("a");
 
-  toggleButton.addEventListener("click", () => {
-    const isOpen = toggleButton.getAttribute("aria-expanded") === "true";
-    isOpen ? closeMenu() : openMenu();
-  });
+    const openMenu = () => {
+      mobileMenu.style.display = "flex";
+      document.body.style.overflowY = "hidden";
+      requestAnimationFrame(() => {
+        toggleButton.setAttribute("aria-expanded", "true");
+      });
+    };
 
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-
+    const closeMenu = () => {
+      mobileMenu.classList.remove("mob-menu_active");
+      toggleButton.setAttribute("aria-expanded", "false");
+      document.body.style.overflowY = "";
       setTimeout(() => {
-        history.replaceState(null, "", window.location.pathname);
-      }, 10);
+        mobileMenu.style.display = "none";
+      }, 250);
+    };
+
+    toggleButton.addEventListener("click", () => {
+      const isOpen = toggleButton.getAttribute("aria-expanded") === "true";
+      isOpen ? closeMenu() : openMenu();
     });
-  });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+        setTimeout(() => {
+          history.replaceState(null, "", window.location.pathname);
+        }, 10);
+      });
+    });
+  }
 }
+
+document.addEventListener("DOMContentLoaded", initMobileMenu);
+document.addEventListener("astro:page-load", initMobileMenu);
+
+if (document.readyState !== "loading") {
+  initMobileMenu();
+}
+
 export {};
