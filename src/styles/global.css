@@ -176,6 +176,15 @@
     right: 0;
   }
 
+  #testimonials ul {
+    mask-image: linear-gradient(
+      to right,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 0, 0) 80%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+
   .testimonial-card {
     @apply rounded-xl;
   }
