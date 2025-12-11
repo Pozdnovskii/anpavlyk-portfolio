@@ -23,19 +23,18 @@ const works = await getCollection("works");
   title="UX&UI Designer for Inclusive Tech"
   description="Fintech-focused interface designer with 4 years of experience in accessible web and mobile design."
 >
-  <section id="hero">
+  <section id="hero" class="relative">
     <h1
-      class="text-[9svw] font-bold mb-[.42lh] flex flex-wrap gap-x-[.4em] relative max-md:text-end md:text-[6svw] md:justify-end 2xl:text-8xl/snug"
+      class="flex flex-wrap gap-x-[.4em] mb-[.42lh] text-[9svw] font-bold md:text-[6svw] md:justify-end 2xl:text-8xl/snug lg:pb-"
       style="view-transition-name: hero-title;"
     >
-      <!-- <span class="ms-[31svw] md:ms-0 md:relative" -->
       <span class="w-full ms-auto relative">
         <span class="relative md:relative"
           >Product
           <Crown
             aria-hidden="true"
             stroke="currentColor"
-            class="w-[1em] aspect-square absolute top-0 left-0 -translate-3/4 md:hidden"
+            class="w-[1em] aspect-square absolute top-0 -translate-y-full md:hidden"
           />
           <Rhomb
             aria-hidden="true"
@@ -45,33 +44,31 @@ const works = await getCollection("works");
         </span>
         <span class="ms-auto md:ms-0 md:me-auto">designer </span>
       </span>
-      <!-- <span class="ms-[48svw] md:ms-[24svw] 2xl:ms-[5em]">for</span> -->
-      <span class="ms-auto relative"
+      <span class="relative"
         >for
         <Rhomb
           aria-hidden="true"
           stroke="currentColor"
-          class="md:hidden w-[.84em] aspect-[7/8] absolute top-0 left-0 -translate-x-4/3"
+          class="md:hidden w-[.84em] aspect-[7/8] absolute top-2 right-0 translate-x-4/3"
         />
       </span>
-      <span class="relative max-md:ms-auto">Fintech tools </span>
+      <span class="relative">Fintech tools </span>
 
-      <div aria-hidden="true" class="absolute w-full -z-1">
-        <Blob
-          style="fill: var(--color-accent);"
-          class="w-[72svw] max-h-[78svw] aspect-[7/8] absolute -top-8 -left-6 md:w-[42%] md:-left-10 md:top-0"
-        />
-        <Portrait
-          stroke="currentColor"
-          class="w-[36svw] aspect-[7/8] absolute top-0 md:w-[27%] md:top-[1.5lh]"
-        />
-      </div>
+      <Portrait
+        aria-hidden="true"
+        class="absolute w-[36svw] aspect-[7/8] stroke-current max-md:right-0 md:left-0 md:top-[1.5lh] md:w-[27%] md:max-h-[calc(100%-1.2lh)]"
+      />
+      <Blob
+        aria-hidden="true"
+        class="absolute -top-8 -right-svw w-[72svw] max-h-[78svw] aspect-[7/8] fill-accent -z-2 md:w-[42%] md:-left-10 md:top-0 md:max-h-[111%]"
+      />
     </h1>
 
     <p class="mb-4 text-light z-1 relative md:w-[min(33em,_72%)] md:ms-auto">
-      Senior Product & UX&nbsp;Designer with 5&nbsp;years in fintech and SaaS.
-      I&nbsp;translate complex workflows into efficient, user-centric
-      interfaces.
+      I design trading platforms and financial software&nbsp;&mdash; products
+      where every interaction matters. Over 5&nbsp;years in fintech, I've
+      focused on making complex workflows more intuitive, ensuring designs meet
+      compliance requirements.
       <Crown
         aria-hidden="true"
         width="42px"
@@ -81,7 +78,7 @@ const works = await getCollection("works");
     </p>
     <p class="text-light z-1 relative md:w-[min(33em,_72%)] md:ms-auto">
       I lead design initiatives end-to-end&nbsp;&mdash; from discovery and user
-      research to&nbsp;high-fidelity prototypes and handoff.
+      research to high-fidelity prototypes and handoff.
     </p>
   </section>
 
@@ -107,10 +104,10 @@ const works = await getCollection("works");
           and enjoyable user experiences.
         </p>
         <p>
-          Collaborating closely with business analysts, developers, and QA
-          teams, I&nbsp;foster a creative environment that leverages diverse
-          insights. This teamwork results in innovative solutions that align
-          with both user needs and business objectives.
+          I work with business analysts to understand requirements, engineers to
+          ensure feasibility, and QA&nbsp;teams to catch edge cases early. This
+          teamwork results in innovative solutions that align with both user
+          needs and business objectives.
         </p>
         <About
           aria-hidden="true"
@@ -121,10 +118,10 @@ const works = await getCollection("works");
       <article class="relative bg-accent card rounded-xl">
         <h3 class="heading-s mb-10">Design process</h3>
         <p>
-          I use the Double Diamond framework to ensure my design process is both
-          user-centered and solution-oriented. This approach divides the design
-          journey into four distinct phases: Discover, Define, Develop, and
-          Deliver.
+          I begin with research&nbsp;&mdash; user and stakeholder interviews,
+          competitive analysis. I&nbsp;move through iterative prototyping and
+          testing, from low-fidelity sketches to interactive prototypes, using
+          AI to speed up ideation and analysis.
         </p>
 
         <ProcessIcon
@@ -150,6 +147,20 @@ const works = await getCollection("works");
           class="aspect-square absolute bottom-4 right-4"
         /> -->
       </article>
+
+      <section class="col-span-full mt-7.5 md:mt-10">
+        <h3 class="heading-s mb-5">Education</h3>
+        <ul
+          class="text-balance leading-5 grid gap-5 md:grid-cols-2 md:gap-x-10 md:gap-y-7.5"
+        >
+          <li class="grid grid-cols-1">
+            <h4 class="heading-s self-end">
+              LABASAD Barcelona School of Arts & Design 2025-2026
+            </h4>
+            <span>Master's Degree in Principles of Graphic Design</span>
+          </li>
+        </ul>
+      </section>
 
       <section class="col-span-full mt-7.5 md:mt-10">
         <h3 class="heading-s mb-5">Certifications</h3>
