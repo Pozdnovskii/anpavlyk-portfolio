@@ -95,6 +95,7 @@ const works = await getCollection("works");
       <div class="col-span-full [&>p]:w-[min(30em,_100%)] text-pretty relative">
         <p class="mb-4">
           I am a designer who puts <span
+            data-umami-event="click-people-first"
             id="text-underline"
             class="relative inline-block"
           >
@@ -153,7 +154,7 @@ const works = await getCollection("works");
         <ul
           class="text-balance leading-5 grid gap-5 md:grid-cols-2 md:gap-x-10 md:gap-y-7.5"
         >
-          <li class="grid grid-cols-1">
+          <li class="grid grid-cols-1" data-umami-event="click-education">
             <h4 class="heading-s self-end">
               LABASAD Barcelona School of Arts & Design 2025-2026
             </h4>
@@ -185,6 +186,7 @@ const works = await getCollection("works");
         class="flex items-end aspect-video relative bg-grey rounded-xl card has-hover:bg-indigo-300 transition"
       >
         <a
+          data-umami-event="click-external article"
           href="https://www.linkedin.com/pulse/future-accessibility-devexperts-anastasiya-pavlyk-dx1zf/"
           target="_blank"
           class="text-[clamp(1.125rem,calc(0.8rem+1.6svw),2.5rem)] mb-0 after:absolute after:inset-0 hover:underline"

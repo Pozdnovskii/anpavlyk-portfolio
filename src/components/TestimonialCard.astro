@@ -13,6 +13,7 @@ const { author, role, order } = testimonial.data;
     {
       order === 2 && (
         <button
+          data-umami-event="click-show-more-testimonial"
           id="show-more-btn"
           class="cursor-pointer underline hover:text-blue-600"
           aria-expanded="false"
