@@ -191,10 +191,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </p>
     </footer>
     <script>
-      import("../scripts/mobile-menu");
-    </script>
-    <script>
-      import("../scripts/goUpAnimation");
+      import { initMobileMenu } from "../scripts/mobile-menu";
+      import { initGoUpAnimation } from "../scripts/goUpAnimation";
+
+      document.addEventListener("astro:page-load", () => {
+        initMobileMenu();
+        initGoUpAnimation();
+      });
     </script>
   </body>
 </html>

@@ -216,10 +216,14 @@ const works = await getCollection("works");
   </section>
 
   <script>
-    import("../scripts/scroll-menu");
-  </script>
+    import { destroyScrollMenu, initScrollMenu } from "../scripts/scroll-menu";
+    import { initTestimonial } from "../scripts/full-testimonial";
 
-  <script>
-    import("../scripts/full-testimonial");
+    document.addEventListener("astro:page-load", () => {
+      initScrollMenu();
+      initTestimonial();
+    });
+
+    document.addEventListener("astro:before-swap", destroyScrollMenu);
   </script>
 </Layout>
