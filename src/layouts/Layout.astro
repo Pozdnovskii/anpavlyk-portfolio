@@ -7,6 +7,7 @@ import Linkedin from "../assets/images/svg/linkedin.svg";
 
 // const isHomePage = Astro.url.pathname === "/";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
 ---
 
 <!doctype html>
@@ -36,10 +37,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> -->
     <meta name="view-transition" content="same-origin" />
-    <script
-      defer
-      src="https://cloud.umami.is/script.js"
-      data-website-id="6c788755-88ab-4523-bb83-8d5de068fa1c"></script>
+    {
+      (enableAnalytics && <meta name="robots" content="index, follow" />) || (
+        <meta name="robots" content="noindex, nofollow" />
+      )
+    }
+
+    {
+      enableAnalytics && (
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="6c788755-88ab-4523-bb83-8d5de068fa1c"
+        />
+      )
+    }
+
     <ClientRouter />
   </head>
   <body
