@@ -28,15 +28,23 @@ const works = await getCollection("works");
       class="flex flex-wrap gap-x-[.4em] mb-[.42lh] text-[9svw] font-bold md:text-[6svw] md:justify-end 2xl:text-8xl/snug lg:pb-"
       style="view-transition-name: hero-title;"
     >
-      <span class="w-full ms-auto relative">
+      <span
+        data-fade-animation
+        class="w-full ms-auto relative"
+        style="--fade-index: 1"
+      >
         <span class="relative md:relative"
           >Product
           <Crown
+            data-svg-path-animation
+            style="--svg-path-index: 3"
             aria-hidden="true"
             stroke="currentColor"
             class="w-[1em] aspect-square absolute top-0 -translate-y-full md:hidden"
           />
           <Rhomb
+            data-svg-path-animation
+            style="--svg-path-index: 2"
             aria-hidden="true"
             stroke="currentColor"
             class="hidden md:w-[.66em] md:aspect-[7/8] md:absolute md:block"
@@ -44,39 +52,55 @@ const works = await getCollection("works");
         </span>
         <span class="ms-auto md:ms-0 md:me-auto">designer </span>
       </span>
-      <span class="relative"
+      <span class="relative" data-fade-animation style="--fade-index: 2"
         >for
         <Rhomb
+          data-svg-path-animation
+          style="--svg-path-index: 3"
           aria-hidden="true"
           stroke="currentColor"
           class="md:hidden w-[.84em] aspect-[7/8] absolute top-2 right-0 translate-x-4/3"
         />
       </span>
-      <span class="relative">fintech tools </span>
+      <span class="relative" data-fade-animation style="--fade-index: 3"
+        >fintech tools
+      </span>
 
       <Portrait
+        data-svg-path-animation
+        style="--svg-path-index: 1"
         aria-hidden="true"
         class="absolute w-[36svw] aspect-[7/8] stroke-current max-md:right-0 md:left-0 md:top-[1.5lh] md:w-[27%] md:max-h-[calc(100%-1.2lh)]"
       />
       <Blob
         aria-hidden="true"
-        class="absolute -top-8 -right-svw w-[72svw] max-h-[78svw] aspect-[7/8] fill-accent -z-2 md:w-[42%] md:-left-10 md:top-0 md:max-h-[111%]"
+        class="blob absolute -top-8 -right-svw w-[72svw] max-h-[78svw] aspect-[7/8] fill-accent -z-2 md:w-[42%] md:-left-10 md:top-0 md:max-h-[111%]"
       />
     </h1>
 
-    <p class="mb-4 text-light z-1 relative md:w-[min(33em,_72%)] md:ms-auto">
+    <p
+      class="mb-4 text-light z-1 relative md:w-[min(33em,_72%)] md:ms-auto"
+      data-fade-animation
+      style="--fade-index: 6"
+    >
       I design trading platforms and financial software&nbsp;&mdash; products
       where every interaction matters. Over 5&nbsp;years in fintech, I've
       focused on making complex workflows more intuitive, ensuring designs meet
       compliance requirements.
       <Crown
+        data-svg-path-animation
+        style="--svg-path-index: 3"
         aria-hidden="true"
         width="42px"
         stroke="currentColor"
         class="hidden md:block md:absolute md:top-0 md:left-0 md:aspect-square md:-translate-x-3/4 md:-translate-y-full"
       />
     </p>
-    <p class="text-light z-1 relative md:w-[min(33em,_72%)] md:ms-auto">
+    <p
+      class="text-light z-1 relative md:w-[min(33em,_72%)] md:ms-auto"
+      data-fade-animation
+      style="--fade-index: 5"
+    >
       I lead design initiatives end-to-end&nbsp;&mdash; from discovery and user
       research to high-fidelity prototypes and handoff.
     </p>

@@ -73,6 +73,7 @@ const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
         aria-controls="mobile-menu"
         class="relative z-1 ps-[12px] cursor-pointer aria-expanded:[&+nav]:opacity-100 aria-expanded:[&+nav]:translate-y-0 aria-expanded:[&+nav_li]:-translate-x-[1em] aria-expanded:[&+nav_li]:opacity-100 aria-expanded:[&+nav>a]:opacity-100 md:hidden"
       >
+        <!-- data-svg-path-animation -->
         <svg
           width="45"
           height="45"
@@ -81,20 +82,26 @@ const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            style="--svg-path-index: 1"
             id="burger-line-top"
             d="M11 17.7971C15 17 23.1497 14.0369 35 17.7971"
             class="stroke-current"
-            stroke-linecap="round"></path>
+            stroke-linecap="round"
+            pathLength="1"></path>
           <path
+            style="--svg-path-index: 1.33"
             id="burger-line-middle"
             d="M11 24.229C14.0624 22.1377 23.1497 20.5826 35 23.0921"
             class="stroke-current"
-            stroke-linecap="round"></path>
+            stroke-linecap="round"
+            pathLength="1"></path>
           <path
+            style="--svg-path-index: 1.66"
             id="burger-line-bottom"
             d="M11 29.4248C16.5 28.4248 25 27.4248 35 29.2219"
             class="stroke-current"
-            stroke-linecap="round"></path>
+            stroke-linecap="round"
+            pathLength="1"></path>
         </svg>
       </button>
       <nav
