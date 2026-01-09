@@ -111,7 +111,15 @@ const works = await getCollection("works");
   <section id="work">
     <h2 class="heading-m">Work</h2>
     <ul class="flex flex-col gap-y-section-sm">
-      {works.map((work) => <Work data={work.data} id={work.id} />)}
+      {
+        works.map((work, index) => (
+          <Work
+            data={work.data}
+            id={work.id}
+            style={{ "--index-work-li": index }}
+          />
+        ))
+      }
     </ul>
   </section>
 
@@ -255,5 +263,44 @@ const works = await getCollection("works");
     });
 
     document.addEventListener("astro:before-swap", destroyScrollMenu);
+  </script>
+
+  <script>
+    function initCardAnimations() {
+      const motionQuery = window.matchMedia(
+        "(prefers-reduced-motion: no-preference)"
+      );
+
+      if (motionQuery.matches) {
+        const supportsScrollAnimations = CSS.supports(
+          "animation-timeline: view()"
+        );
+
+        if (!supportsScrollAnimations) {
+          const observerOptions = {
+            root: null,
+            threshold: 0.1,
+          };
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const img = entry.target.querySelector("img");
+                if (img) {
+                  img.classList.add("animate");
+                }
+                observer.unobserve(entry.target);
+              }
+            });
+          }, observerOptions);
+
+          document
+            .querySelectorAll("[data-work-card]")
+            .forEach((card) => observer.observe(card));
+        }
+      }
+    }
+
+    document.addEventListener("astro:page-load", initCardAnimations);
   </script>
 </Layout>

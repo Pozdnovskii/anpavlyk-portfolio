@@ -214,13 +214,51 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
+    /* [data-work-card] {
+      position: sticky;
+      top: calc(1.5rem + 75px + var(--index-work-li) * 60px);
+      box-shadow: rgba(32, 32, 32, 0.1) 0px -30px 90px 0px;
+    } */
+
+    [data-work-card] img {
+      opacity: 0.75;
+      transform: scale(0.9);
+    }
+
+    @supports (animation-timeline: view()) {
+      [data-work-card] {
+        view-timeline-name: --card-timeline;
+      }
+
+      [data-work-card] img {
+        animation: image-reveal linear both;
+        animation-timeline: --card-timeline;
+        animation-range: entry 0% entry 110%;
+      }
+    }
+
+    [data-work-card] img.animate {
+      animation: image-reveal 1s ease-out forwards;
+    }
+
+    @keyframes image-reveal {
+      from {
+        opacity: 0.75;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
     [data-svg-animation] {
-      path {
+      path:not(.without-animation) {
         opacity: 0;
         stroke-dasharray: 1;
         stroke-dashoffset: 1;
       }
-      &.animate path {
+      &.animate path:not(.without-animation) {
         animation: svgFade 0.5s ease-out forwards
           calc(var(--svg-path-index) * 0.25s);
       }
