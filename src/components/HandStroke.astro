@@ -8,6 +8,8 @@ const { number } = Astro.props;
 >
   {number}
   <svg
+    style="--svg-path-index: 2"
+    data-svg-animation
     viewBox="0 0 50 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +19,7 @@ const { number } = Astro.props;
       d="M36.2354 9.35263C26.8211 3.44161 15.269 4.59376 9.69491 7.53563C5.4172 9.79329 2.07967 14.8194 2.80443 21.9357C3.33545 27.1496 6.175 33.9504 19.3667 35.4794C29.2642 36.6266 36.4365 34.3579 42.3036 29.5382C51.0607 22.3447 48.381 9.35263 34.0271 3.4416"
       stroke="currentColor"
       stroke-width="2"
-      stroke-linecap="round"></path>
+      stroke-linecap="round"
+      pathLength="1"></path>
   </svg>
 </span>

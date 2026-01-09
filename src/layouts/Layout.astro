@@ -214,10 +214,12 @@ const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
     <script>
       import { initMobileMenu } from "../scripts/mobile-menu";
       import { initGoUpAnimation } from "../scripts/goUpAnimation";
+      import { initSVGAnimations } from "../scripts/svg-animations";
 
       document.addEventListener("astro:page-load", () => {
         initMobileMenu();
         initGoUpAnimation();
+        initSVGAnimations();
       });
     </script>
   </body>

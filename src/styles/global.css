@@ -214,12 +214,24 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
+    [data-svg-animation] {
+      path {
+        opacity: 0;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+      }
+      &.animate path {
+        animation: svgFade 0.5s ease-out forwards
+          calc(var(--svg-path-index) * 0.25s);
+      }
+    }
+
     [data-svg-path-animation] path {
       opacity: 0;
       stroke-dasharray: 1;
       stroke-dashoffset: 1;
-      animation: heroSvgFade calc(1.5s / var(--svg-path-index)) ease-out
-        forwards calc(var(--svg-path-index) * 1.5s);
+      animation: svgFade 0.75s ease-out forwards
+        calc(var(--svg-path-index) * 0.25s);
     }
 
     [data-fade-animation] {
@@ -253,7 +265,7 @@
       }
     }
 
-    @keyframes heroSvgFade {
+    @keyframes svgFade {
       50% {
         opacity: 1;
       }

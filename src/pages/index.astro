@@ -37,14 +37,14 @@ const works = await getCollection("works");
           >Product
           <Crown
             data-svg-path-animation
-            style="--svg-path-index: 3"
+            style="--svg-path-index: 10"
             aria-hidden="true"
             stroke="currentColor"
             class="w-[1em] aspect-square absolute top-0 -translate-y-full md:hidden"
           />
           <Rhomb
             data-svg-path-animation
-            style="--svg-path-index: 2"
+            style="--svg-path-index: 10"
             aria-hidden="true"
             stroke="currentColor"
             class="hidden md:w-[.66em] md:aspect-[7/8] md:absolute md:block"
@@ -56,7 +56,7 @@ const works = await getCollection("works");
         >for
         <Rhomb
           data-svg-path-animation
-          style="--svg-path-index: 2"
+          style="--svg-path-index: 14"
           aria-hidden="true"
           stroke="currentColor"
           class="md:hidden w-[.84em] aspect-[7/8] absolute top-2 right-0 translate-x-4/3"
@@ -91,7 +91,7 @@ const works = await getCollection("works");
       compliance requirements.
       <Crown
         data-svg-path-animation
-        style="--svg-path-index: 3"
+        style="--svg-path-index: 14"
         aria-hidden="true"
         width="42px"
         stroke="currentColor"
@@ -139,10 +139,10 @@ const works = await getCollection("works");
         <About
           aria-hidden="true"
           stroke="currentColor"
-          class="hidden md:h-[132%] md:absolute md:block end-0 bottom-0"
+          class="tester hidden md:h-[132%] md:absolute md:block end-0 bottom-0"
         />
       </div>
-      <article class="relative bg-accent card rounded-xl">
+      <article class="relative bg-accent card rounded-xl" data-animation-parent>
         <h3 class="heading-s mb-10">Design process</h3>
         <p>
           I begin with research&nbsp;&mdash; user and stakeholder interviews,
@@ -152,6 +152,8 @@ const works = await getCollection("works");
         </p>
 
         <ProcessIcon
+          data-svg-animation
+          style="--svg-path-index: 1"
           aria-hidden="true"
           width="20%"
           stroke="currentColor"
@@ -209,6 +211,7 @@ const works = await getCollection("works");
     <h2 class="heading-m">Talks&Articles</h2>
     <ul class="grid gap-7.5 md:grid-cols-2">
       <li
+        data-animation-parent
         class="flex items-end aspect-video relative bg-grey rounded-xl card has-hover:bg-indigo-300 transition"
       >
         <a
@@ -219,6 +222,7 @@ const works = await getCollection("works");
           >The Future of Accessibility at&nbsp;Devexperts
         </a>
         <ArticleIcon
+          data-svg-animation
           aria-hidden="true"
           width="10%"
           stroke="currentColor"
