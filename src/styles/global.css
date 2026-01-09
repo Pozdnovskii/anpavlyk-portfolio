@@ -225,15 +225,15 @@
     [data-fade-animation] {
       opacity: 0;
       transform: translateY(12px);
-      animation: heroFadeUp 1s ease-out forwards;
-      animation-delay: calc(var(--fade-index) * 0.2s);
+      animation: heroFadeUp 1s ease-out forwards calc(var(--fade-index) * 0.2s);
     }
 
     [data-opacity-animation] {
       opacity: 0;
-      transform: scale(0.78);
+      transform: scale(0.84);
       transform-origin: center;
-      animation: heroOpacity 1.5s ease-out 1s forwards;
+      animation: heroOpacity 1s ease-out forwards
+        calc(1s + var(--opacity-index) * 0.2s);
     }
 
     @keyframes heroOpacity {
