@@ -214,46 +214,46 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .blob {
-      opacity: 0;
-      transform: scale(0);
-      transform-origin: center;
-      animation: blobFade 1s ease-out forwards;
-    }
-
     [data-svg-path-animation] path {
       opacity: 0;
       stroke-dasharray: 1;
       stroke-dashoffset: 1;
-      animation: portraitFade calc(1.5s / var(--svg-path-index)) ease-out
+      animation: heroSvgFade calc(1.5s / var(--svg-path-index)) ease-out
         forwards calc(var(--svg-path-index) * 1.5s);
     }
 
     [data-fade-animation] {
       opacity: 0;
-      transform: translateY(20px);
-      animation: heroElementsFadeUp 1s ease-out forwards;
-      /* animation-delay: calc(var(--fade-index) * 0.2s); */
+      transform: translateY(12px);
+      animation: heroFadeUp 1s ease-out forwards;
+      animation-delay: calc(var(--fade-index) * 0.2s);
     }
 
-    @keyframes blobFade {
-      50% {
+    [data-opacity-animation] {
+      opacity: 0;
+      transform: scale(0.78);
+      transform-origin: center;
+      animation: heroOpacity 1.5s ease-out 1s forwards;
+    }
+
+    @keyframes heroOpacity {
+      66% {
         opacity: 1;
       }
       100% {
-        opacity: 1;
         transform: scale(1);
+        opacity: 1;
       }
     }
 
-    @keyframes heroElementsFadeUp {
+    @keyframes heroFadeUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    @keyframes portraitFade {
+    @keyframes heroSvgFade {
       50% {
         opacity: 1;
       }
