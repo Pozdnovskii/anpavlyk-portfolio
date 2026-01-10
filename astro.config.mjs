@@ -14,4 +14,42 @@ export default defineConfig({
     responsiveStyles: true,
     layout: "constrained",
   },
+
+  experimental: {
+    fonts: [
+      {
+        provider: "local",
+        name: "NeueMetana",
+        cssVariable: "--font-neue-metana",
+        variants: [
+          {
+            weight: 400,
+            style: "normal",
+            src: ["./src/assets/fonts/NeueMetana-Regular.woff2"],
+          },
+          {
+            weight: 700,
+            style: "normal",
+            src: ["./src/assets/fonts/NeueMetana-Bold.woff2"],
+          },
+        ],
+
+        fallbacks: ["sans-serif"],
+      },
+      {
+        provider: "local",
+        name: "Geist",
+        cssVariable: "--font-geist",
+        variants: [
+          {
+            weight: "100 900",
+            style: "normal",
+            src: ["./src/assets/fonts/Geist-VariableFont_wght.woff2"],
+          },
+        ],
+
+        fallbacks: ["sans-serif"],
+      },
+    ],
+  },
 });

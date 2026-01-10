@@ -1,6 +1,7 @@
 ---
 const { title, description } = Astro.props;
 import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
 
 import "../styles/global.css";
 import Linkedin from "../assets/images/svg/linkedin.svg";
@@ -54,6 +55,8 @@ const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
       )
     }
 
+    <Font cssVariable="--font-neue-metana" preload />
+    <Font cssVariable="--font-geist" preload />
     <ClientRouter />
   </head>
   <body

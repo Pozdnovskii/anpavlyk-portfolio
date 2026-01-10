@@ -26,8 +26,8 @@
 }
 
 @theme {
-  --font-primary: "Geist", sans-serif;
-  --font-secondary: "NeueMetana", sans-serif;
+  --font-primary: var(--font-geist);
+  --font-secondary: var(--font-neue-metana);
   --color-primary: var(--color-stone-950);
   --color-secondary: var(--color-stone-50);
   --color-light: var(--color-zinc-800);
