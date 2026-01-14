@@ -1,4 +1,5 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { file } from "astro/loaders";
 
 const works = defineCollection({
@@ -22,18 +23,5 @@ const testimonials = defineCollection({
     order: z.number().optional(),
   }),
 });
-
-// const works = defineCollection({
-//   loader: glob({ pattern: "*.md", base: "src/content/works" }),
-
-//   schema: ({ image }) =>
-//     z.object({
-//       title: z.string(),
-//       tags: z.array(z.string()),
-//       cover: image(),
-//       coverAlt: z.string(),
-//       behanceUrl: z.string().optional(),
-//     }),
-// });
 
 export const collections = { works, testimonials };
