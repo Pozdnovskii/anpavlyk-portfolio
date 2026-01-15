@@ -60,7 +60,7 @@ const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
     <ClientRouter />
   </head>
   <body
-    class="antialiased md:text-[1.125rem] lg:text-[1.125em] xl:text-[1.25em] 2xl:text-[1.375em]"
+    class="antialiased grid grid-cols-1 grid-rows-[max-content_auto_max-content] min-h-dvh md:text-[1.125rem] lg:text-[1.125em] xl:text-[1.25em] 2xl:text-[1.375em]"
   >
     <header
       id="header"
@@ -164,7 +164,7 @@ const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
     </main>
     <footer
       id="footer"
-      class="wrapper grid grid-cols-2 sm:grid-cols-3 items-center gap-4 text-em-sm pb-4"
+      class="wrapper grid grid-cols-2 mt-auto sm:grid-cols-3 items-center gap-4 text-em-sm pb-4"
     >
       <a
         data-umami-event="click-goup"

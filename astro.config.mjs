@@ -8,7 +8,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: "https://apavlyk.cc/",
+  site: "https://apavlyk.cc",
   integrations: [sitemap()],
   image: {
     responsiveStyles: true,
