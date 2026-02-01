@@ -14,7 +14,7 @@ export default defineConfig({
     responsiveStyles: true,
     layout: "constrained",
   },
-
+  trailingSlash: "always",
   experimental: {
     fonts: [
       {
