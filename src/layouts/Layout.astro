@@ -1,5 +1,5 @@
 ---
-const { title, description } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 import { ClientRouter } from "astro:transitions";
 import { Font } from "astro:assets";
 
@@ -40,7 +40,7 @@ const enableAnalytics = import.meta.env.PUBLIC_ENABLE_ANALYTICS === "true";
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" /> -->
     <meta name="view-transition" content="same-origin" />
     {
-      (enableAnalytics && <meta name="robots" content="index, follow" />) || (
+      (noindex || !enableAnalytics) && (
         <meta name="robots" content="noindex, nofollow" />
       )
     }
