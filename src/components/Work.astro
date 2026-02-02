@@ -16,6 +16,7 @@ const href = isExternal ? data.behanceUrl : `${id}`;
   <a
     href={href}
     target={isExternal ? "_blank" : "_self"}
+    rel={isExternal ? "noopener" : undefined}
     data-umami-event={isExternal ? "click-bahance-case" : "click-internal-case"}
     class="flex justify-between gap-x-4 items-center before:absolute before:inset-0 before:z-2"
   >

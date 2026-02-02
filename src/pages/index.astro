@@ -17,11 +17,33 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
 import TestimonialsList from "../components/TestimonialsList.astro";
 
 const works = await getCollection("works");
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Anastasiya Pavlyk",
+    jobTitle: "Product Designer",
+    description:
+      "Fintech-focused product designer with 5+ years of experience designing trading platforms and financial software.",
+    url: "https://apavlyk.cc",
+    sameAs: ["https://www.linkedin.com/in/anastasiya-pavlyk/"],
+    knowsAbout: [
+      "UX Design",
+      "UI Design",
+      "Fintech",
+      "Trading Platforms",
+      "Accessibility",
+    ],
+  },
+};
 ---
 
 <Layout
   title="Product designer for Fintech tools"
   description="Fintech-focused interface designer with 4 years of experience in accessible web and mobile design."
+  schema={schema}
 >
   <section id="hero" class="relative">
     <h1
@@ -226,6 +248,7 @@ const works = await getCollection("works");
           data-umami-event="click-external article"
           href="https://www.linkedin.com/pulse/future-accessibility-devexperts-anastasiya-pavlyk-dx1zf/"
           target="_blank"
+          rel="noopener"
           class="text-[clamp(1.125rem,calc(0.8rem+1.6svw),2.5rem)] mb-0 after:absolute after:inset-0 hover:underline"
           >The Future of Accessibility at&nbsp;Devexperts
         </a>

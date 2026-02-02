@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -18,37 +18,39 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "NeueMetana",
         cssVariable: "--font-neue-metana",
-        variants: [
-          {
-            weight: 400,
-            style: "normal",
-            src: ["./src/assets/fonts/NeueMetana-Regular.woff2"],
-          },
-          {
-            weight: 700,
-            style: "normal",
-            src: ["./src/assets/fonts/NeueMetana-Bold.woff2"],
-          },
-        ],
-
         fallbacks: ["sans-serif"],
+        options: {
+          variants: [
+            {
+              weight: 400,
+              style: "normal",
+              src: ["./src/assets/fonts/NeueMetana-Regular.woff2"],
+            },
+            {
+              weight: 700,
+              style: "normal",
+              src: ["./src/assets/fonts/NeueMetana-Bold.woff2"],
+            },
+          ],
+        },
       },
       {
-        provider: "local",
+        provider: fontProviders.local(),
         name: "Geist",
         cssVariable: "--font-geist",
-        variants: [
-          {
-            weight: "100 900",
-            style: "normal",
-            src: ["./src/assets/fonts/Geist-VariableFont_wght.woff2"],
-          },
-        ],
-
         fallbacks: ["sans-serif"],
+        options: {
+          variants: [
+            {
+              weight: "100 900",
+              style: "normal",
+              src: ["./src/assets/fonts/Geist-VariableFont_wght.woff2"],
+            },
+          ],
+        },
       },
     ],
   },

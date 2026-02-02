@@ -1,0 +1,35 @@
+# Anastasiya Pavlyk Portfolio
+
+> Portfolio website of Anastasiya Pavlyk, a product designer specializing in fintech tools.
+
+## About
+
+Anastasiya Pavlyk is a product designer with 5+ years of experience in fintech. She designs trading platforms and financial software where every interaction matters. Her work focuses on making complex workflows intuitive while ensuring designs meet compliance requirements.
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/anastasiya-pavlyk/
+- Website: https://apavlyk.cc
+
+## Work
+
+Anastasiya leads design initiatives end-to-end — from discovery and user research to high-fidelity prototypes and handoff.
+
+### Case Studies
+
+- Mobile Trading Platform: Designing a mobile-first trading web application
+- Asset Management App: Redesigning an asset management application
+- Block Trade Functionality: Designing block trade features for institutional traders
+
+## Skills
+
+- UX/UI Design
+- User Research
+- Prototyping
+- Design Systems
+- Accessibility (WCAG)
+- Fintech Domain Expertise
+
+## Optional
+
+This site is built with Astro, Tailwind CSS, and deployed as a static site.
