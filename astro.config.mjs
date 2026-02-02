@@ -15,7 +15,10 @@ export default defineConfig({
     layout: "constrained",
   },
   trailingSlash: "always",
+
   experimental: {
+    svgo: true,
+
     fonts: [
       {
         provider: fontProviders.local(),
