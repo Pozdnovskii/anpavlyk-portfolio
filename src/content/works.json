@@ -1,20 +1,20 @@
 [
   {
-    "id": "asset-management-app",
+    "id": "asset-management-app/",
     "title": "Improving user satisfaction through asset management app redesign",
     "tags": ["UI&UX", "Research", "Mentoring", "SaaS"],
     "cover": "../assets/images/works/asset-management-app/cover.png",
     "coverAlt": "Redesigned asset management app showing portfolio, performance charts, and risk analysis."
   },
   {
-    "id": "mobile-trading-platform",
+    "id": "mobile-trading-platform/",
     "title": "Transforming a desktop trading platform into a mobile-first experience",
     "tags": ["UI&UX", "Mobile Trading", "Banking Integration", "B2C"],
     "cover": "../assets/images/works/mobile-trading-platform/cover.webp",
     "coverAlt": "Collage of mobile app screenshots showing a modern trading platform with portfolio, charts, search, and buy/sell options."
   },
   {
-    "id": "block-trade-functionality",
+    "id": "block-trade-functionality/",
     "title": "Introducing the block trade functionality for SpectrAXE",
     "tags": ["UI&UX", "Research", "SaaS", "B2B"],
     "cover": "../assets/images/works/spectraxe/cover.png",
