@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://apavlyk.cc/sitemap-index.xml
-Llms: https://apavlyk.cc/llms.txt
